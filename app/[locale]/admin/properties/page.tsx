@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
+import { optimizeImage } from "@/lib/imageOptimization";
 import { useTranslations, useLocale } from "next-intl";
 import {
   Squares2X2Icon,
@@ -291,7 +292,14 @@ export default function PropertiesPage() {
 
       if (imageFiles.length > 0) {
         for (let i = 0; i < imageFiles.length; i++) {
-          const file = imageFiles[i];
+          let file = imageFiles[i];
+          
+          try {
+            file = await optimizeImage(file);
+          } catch (optimizeErr) {
+            console.error("Error optimizing image:", optimizeErr);
+          }
+
           const fileExt = file.name.split(".").pop();
           const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
           const filePath = `properties/${fileName}`;
