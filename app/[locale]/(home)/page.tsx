@@ -31,7 +31,7 @@ interface Property {
 }
 
 const statsData = [
-  { target: 100, suffix: "+", labelKey: "stat_properties" },
+  { target: 50, suffix: "+", labelKey: "stat_properties" },
   { target: 7, suffix: "+", labelKey: "stat_years_experience" },
   { target: 3, suffix: "+", labelKey: "stat_cities" },
   { target: 24, suffix: "/7", labelKey: "stat_support" }, // Fixed: 24 animates, /7 displays nicely alongside it!
