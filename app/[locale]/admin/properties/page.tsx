@@ -30,7 +30,7 @@ const navItems = [
 function getIcon(iconType: string) {
   switch (iconType) {
     case "dashboard":
-  return <Squares2X2Icon className="h-5 w-5" />;
+      return <Squares2X2Icon className="h-5 w-5" />;
     case "properties":
       return (
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -43,8 +43,8 @@ function getIcon(iconType: string) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
         </svg>
       );
-      case "evaluations":
-        return <ClipboardDocumentCheckIcon className="h-5 w-5" />;
+    case "evaluations":
+      return <ClipboardDocumentCheckIcon className="h-5 w-5" />;
     default:
       return null;
   }
@@ -150,7 +150,7 @@ export default function PropertiesPage() {
   function extractFilePathFromUrl(imageUrl: string): string | null {
     try {
       console.log("Extracting path from URL:", imageUrl);
-      
+
       const url = new URL(imageUrl);
       const pathname = url.pathname;
       console.log("Full pathname:", pathname);
@@ -293,7 +293,7 @@ export default function PropertiesPage() {
       if (imageFiles.length > 0) {
         for (let i = 0; i < imageFiles.length; i++) {
           let file = imageFiles[i];
-          
+
           try {
             file = await optimizeImage(file);
           } catch (optimizeErr) {
@@ -357,18 +357,18 @@ export default function PropertiesPage() {
           prev.map((p) =>
             p.id === editingPropertyId
               ? ({
-                  ...p,
-                  title: propertyData.title,
-                  type: propertyData.type,
-                  city: propertyData.city,
-                  price: propertyData.price,
-                  surface: propertyData.surface || undefined,
-                  rooms: propertyData.rooms || undefined,
-                  status: propertyData.status,
-                  description: propertyData.description,
-                  featured: propertyData.featured,
-                  images: propertyData.images,
-                } as Property)
+                ...p,
+                title: propertyData.title,
+                type: propertyData.type,
+                city: propertyData.city,
+                price: propertyData.price,
+                surface: propertyData.surface || undefined,
+                rooms: propertyData.rooms || undefined,
+                status: propertyData.status,
+                description: propertyData.description,
+                featured: propertyData.featured,
+                images: propertyData.images,
+              } as Property)
               : p
           )
         );
@@ -556,9 +556,8 @@ export default function PropertiesPage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#6B1929] text-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:top-auto top-16 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#000000] text-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:top-auto top-16 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="flex flex-col h-full">
           <nav className="flex-1 px-4 pt-6 space-y-2">
@@ -579,7 +578,7 @@ export default function PropertiesPage() {
             <button
               onClick={handleLogout}
               disabled={logoutLoading}
-              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#6B1929] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
@@ -607,7 +606,7 @@ export default function PropertiesPage() {
 
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="mb-4 inline-flex md:hidden items-center justify-center rounded-lg p-2 text-[#6B1929] hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+            className="mb-4 inline-flex md:hidden items-center justify-center rounded-lg p-2 text-[#000000] hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
             aria-label="Toggle menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -621,12 +620,12 @@ export default function PropertiesPage() {
 
           <div className="mt-8 mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#6B1929]">{t("manage_properties_title")}</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#000000]">{t("manage_properties_title")}</h2>
               <p className="mt-1 text-sm text-gray-600">{filteredProperties.length} properties</p>
             </div>
             <button
               onClick={() => setShowModal(true)}
-              className="inline-flex items-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#6B1929] transition-colors hover:bg-[#D4B56A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -641,12 +640,12 @@ export default function PropertiesPage() {
               placeholder={t("search_placeholder")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30 flex-1"
+              className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30 flex-1"
             />
             <select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
-              className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#6B1929] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30 sm:min-w-[150px]"
+              className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#000000] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30 sm:min-w-[150px]"
             >
               <option value="">{t("all_types")}</option>
               <option value="Apartment">{t("apartment")}</option>
@@ -657,7 +656,7 @@ export default function PropertiesPage() {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#6B1929] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30 sm:min-w-[150px]"
+              className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#000000] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30 sm:min-w-[150px]"
             >
               <option value="">{t("all_statuses")}</option>
               <option value="Sale">{t("sale")}</option>
@@ -679,14 +678,14 @@ export default function PropertiesPage() {
               <table className="w-full">
                 <thead className="border-b border-gray-200 bg-gray-50">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#6B1929]">{t("image")}</th>
-                    <th className="min-w-[160px] px-4 py-3 text-left text-xs font-semibold text-[#6B1929]">{t("title")}</th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#6B1929]">{t("city")}</th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#6B1929]">{t("type")}</th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#6B1929]">{t("status")}</th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#6B1929]">{t("price")}</th>
-                    <th className="px-4 py-3 text-center text-xs font-semibold text-[#6B1929]">{t("featured")}</th>
-                    <th className="px-4 py-3 text-center text-xs font-semibold text-[#6B1929]">{t("actions")}</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#000000]">{t("image")}</th>
+                    <th className="min-w-[160px] px-4 py-3 text-left text-xs font-semibold text-[#000000]">{t("title")}</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#000000]">{t("city")}</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#000000]">{t("type")}</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#000000]">{t("status")}</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-[#000000]">{t("price")}</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold text-[#000000]">{t("featured")}</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold text-[#000000]">{t("actions")}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -707,7 +706,7 @@ export default function PropertiesPage() {
                           </div>
                         )}
                       </td>
-                      <td className="px-4 py-3 text-sm font-medium text-[#6B1929]">{property.title}</td>
+                      <td className="px-4 py-3 text-sm font-medium text-[#000000]">{property.title}</td>
                       <td className="px-4 py-3 text-sm text-gray-600">{property.city}</td>
                       <td className="px-4 py-3">
                         <span className="inline-block rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800">
@@ -716,11 +715,10 @@ export default function PropertiesPage() {
                       </td>
                       <td className="px-4 py-3">
                         <span
-                          className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                            property.status === "Sale"
+                          className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${property.status === "Sale"
                               ? "bg-green-100 text-green-800"
                               : "bg-orange-100 text-orange-800"
-                          }`}
+                            }`}
                         >
                           {property.status}
                         </span>
@@ -731,11 +729,10 @@ export default function PropertiesPage() {
                       <td className="px-4 py-3 text-center">
                         <button
                           onClick={() => handleToggleFeatured(property.id, property.featured)}
-                          className={`inline-flex items-center justify-center rounded-full p-1.5 transition-colors ${
-                            property.featured
+                          className={`inline-flex items-center justify-center rounded-full p-1.5 transition-colors ${property.featured
                               ? "bg-[#C9A55A]/20 text-[#C9A55A]"
                               : "bg-gray-100 text-gray-400"
-                          }`}
+                            }`}
                         >
                           <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -773,8 +770,8 @@ export default function PropertiesPage() {
 
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-    <div className="max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-xl bg-white shadow-2xl">   
-    <div className="sticky top-0 border-b border-gray-200 bg-white p-6 sm:p-8">
+          <div className="max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-xl bg-white shadow-2xl">
+            <div className="sticky top-0 border-b border-gray-200 bg-white p-6 sm:p-8">
               <button
                 type="button"
                 onClick={() => cleanupAndClose()}
@@ -785,7 +782,7 @@ export default function PropertiesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <h3 className="text-2xl font-bold text-[#6B1929]">
+              <h3 className="text-2xl font-bold text-[#000000]">
                 {editingPropertyId ? t("edit_property") : t("add_property")}
               </h3>
             </div>
@@ -799,22 +796,22 @@ export default function PropertiesPage() {
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-sm font-medium text-[#6B1929]">{t("title_required")}</label>
+                  <label className="block text-sm font-medium text-[#000000]">{t("title_required")}</label>
                   <input
                     type="text"
                     required
                     placeholder="Property title"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#6B1929]">{t("type_required")}</label>
+                  <label className="block text-sm font-medium text-[#000000]">{t("type_required")}</label>
                   <select
                     value={formData.type}
                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#6B1929] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#000000] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
                   >
                     <option value="Apartment">Apartment</option>
                     <option value="Villa">Villa</option>
@@ -826,74 +823,74 @@ export default function PropertiesPage() {
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-sm font-medium text-[#6B1929]">{t("city_required")}</label>
+                  <label className="block text-sm font-medium text-[#000000]">{t("city_required")}</label>
                   <input
                     type="text"
                     required
                     placeholder="City name"
                     value={formData.city}
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#6B1929]">{t("price_required")}</label>
+                  <label className="block text-sm font-medium text-[#000000]">{t("price_required")}</label>
                   <input
                     type="number"
                     required
                     placeholder="Price"
                     value={formData.price}
                     onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
                   />
                 </div>
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-sm font-medium text-[#6B1929]">{t("surface_label")}</label>
+                  <label className="block text-sm font-medium text-[#000000]">{t("surface_label")}</label>
                   <input
                     type="number"
                     placeholder="Surface"
                     value={formData.surface}
                     onChange={(e) => setFormData({ ...formData, surface: e.target.value })}
-                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#6B1929]">{t("rooms_label")}</label>
+                  <label className="block text-sm font-medium text-[#000000]">{t("rooms_label")}</label>
                   <input
                     type="number"
                     placeholder="Number of rooms"
                     value={formData.rooms}
                     onChange={(e) => setFormData({ ...formData, rooms: e.target.value })}
-                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                    className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#6B1929]">{t("status_required")}</label>
+                <label className="block text-sm font-medium text-[#000000]">{t("status_required")}</label>
                 <select
                   value={formData.status}
                   onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                  className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#6B1929] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                  className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[#000000] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
                 >
                   <option value="Sale">Sale</option>
                   <option value="Rent">Rent</option>
                 </select>
               </div>
 
-<div>
-  <label className="block text-sm font-medium text-[#6B1929]">{t("description_label")}</label>
-  <textarea
-    placeholder="Property description"
-    rows={6}
-    value={formData.description}
-    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-    className="mt-2 w-full resize-none rounded-lg border border-gray-200 px-4 py-2.5 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30 leading-relaxed"
-  />
-</div>
+              <div>
+                <label className="block text-sm font-medium text-[#000000]">{t("description_label")}</label>
+                <textarea
+                  placeholder="Property description"
+                  rows={6}
+                  value={formData.description}
+                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                  className="mt-2 w-full resize-none rounded-lg border border-gray-200 px-4 py-2.5 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30 leading-relaxed"
+                />
+              </div>
 
               <div className="flex items-center gap-3">
                 <input
@@ -903,29 +900,26 @@ export default function PropertiesPage() {
                   onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
                   className="h-4 w-4 rounded border-gray-300 text-[#C9A55A] focus:ring-[#C9A55A]"
                 />
-                <label htmlFor="featured" className="text-sm font-medium text-[#6B1929]">
+                <label htmlFor="featured" className="text-sm font-medium text-[#000000]">
                   Featured Property
                 </label>
               </div>
 
               {(existingImages.length > 0 || previewImages.length > 0) && (
                 <div>
-                  <label className="block text-sm font-medium text-[#6B1929] mb-3">{t("current_images")}</label>
-                  <div className={`${
-                    existingImages.length + previewImages.length > 4
+                  <label className="block text-sm font-medium text-[#000000] mb-3">{t("current_images")}</label>
+                  <div className={`${existingImages.length + previewImages.length > 4
                       ? 'flex overflow-x-auto gap-2 pb-2'
                       : 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3'
-                  }`} >
+                    }`} >
                     {existingImages.map((imageUrl, index) => (
-                      <div key={`existing-${index}`} className={`relative group ${
-                        existingImages.length + previewImages.length > 4 ? 'flex-shrink-0 w-24 h-24' : ''
-                      }`}>
+                      <div key={`existing-${index}`} className={`relative group ${existingImages.length + previewImages.length > 4 ? 'flex-shrink-0 w-24 h-24' : ''
+                        }`}>
                         <div
-                          className={`aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-colors ${
-                            mainImageIndex === index
+                          className={`aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-colors ${mainImageIndex === index
                               ? "border-[#C9A55A] shadow-lg"
                               : "border-gray-200 hover:border-[#C9A55A]"
-                          }`}
+                            }`}
                           onClick={() => setMainImageIndex(index)}
                         >
                           {isVideoUrl(imageUrl) ? (
@@ -940,9 +934,9 @@ export default function PropertiesPage() {
                               <div className="absolute inset-0 flex items-center 
                                               justify-center bg-black/40">
                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                     className="w-6 h-6 text-white" fill="currentColor"
-                                     viewBox="0 0 24 24">
-                                  <path d="M8 5v14l11-7z"/>
+                                  className="w-6 h-6 text-white" fill="currentColor"
+                                  viewBox="0 0 24 24">
+                                  <path d="M8 5v14l11-7z" />
                                 </svg>
                               </div>
                               <div className="absolute bottom-1 left-1 bg-black/70 
@@ -974,30 +968,28 @@ export default function PropertiesPage() {
                           )}
                         </div>
                         <button
-  type="button"
-  onClick={() => removePreviewImage(index)}
-  className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center transition-opacity shadow-lg"
-  title="Remove this image"
->
-  ×
-</button>
+                          type="button"
+                          onClick={() => removePreviewImage(index)}
+                          className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center transition-opacity shadow-lg"
+                          title="Remove this image"
+                        >
+                          ×
+                        </button>
                         {mainImageIndex === index && (
-                          <div className="absolute bottom-0 left-0 right-0 bg-[#C9A55A] text-[#6B1929] text-xs font-semibold py-1 text-center">
+                          <div className="absolute bottom-0 left-0 right-0 bg-[#C9A55A] text-[#000000] text-xs font-semibold py-1 text-center">
                             Main Cover
                           </div>
                         )}
                       </div>
                     ))}
                     {previewImages.map((previewUrl, index) => (
-                      <div key={`preview-${index}`} className={`relative group ${
-                        existingImages.length + previewImages.length > 4 ? 'flex-shrink-0 w-24 h-24' : ''
-                      }`}>
+                      <div key={`preview-${index}`} className={`relative group ${existingImages.length + previewImages.length > 4 ? 'flex-shrink-0 w-24 h-24' : ''
+                        }`}>
                         <div
-                          className={`aspect-square rounded-lg overflow-hidden border-2 border-dashed cursor-pointer transition-colors ${
-                            mainImageIndex === existingImages.length + index
+                          className={`aspect-square rounded-lg overflow-hidden border-2 border-dashed cursor-pointer transition-colors ${mainImageIndex === existingImages.length + index
                               ? "border-[#C9A55A] shadow-lg bg-[#C9A55A]/5"
                               : "border-blue-300 hover:border-[#C9A55A]"
-                          }`}
+                            }`}
                           onClick={() => setMainImageIndex(existingImages.length + index)}
                         >
                           {isVideoFile(imageFiles[index]) ? (
@@ -1012,9 +1004,9 @@ export default function PropertiesPage() {
                               <div className="absolute inset-0 flex items-center 
                                               justify-center bg-black/40">
                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                     className="w-6 h-6 text-white" fill="currentColor"
-                                     viewBox="0 0 24 24">
-                                  <path d="M8 5v14l11-7z"/>
+                                  className="w-6 h-6 text-white" fill="currentColor"
+                                  viewBox="0 0 24 24">
+                                  <path d="M8 5v14l11-7z" />
                                 </svg>
                               </div>
                               <div className="absolute bottom-1 left-1 bg-black/70 
@@ -1048,7 +1040,7 @@ export default function PropertiesPage() {
                           ×
                         </button>
                         {mainImageIndex === existingImages.length + index && (
-                          <div className="absolute bottom-0 left-0 right-0 bg-[#C9A55A] text-[#6B1929] text-xs font-semibold py-1 text-center">
+                          <div className="absolute bottom-0 left-0 right-0 bg-[#C9A55A] text-[#000000] text-xs font-semibold py-1 text-center">
                             Main Cover
                           </div>
                         )}
@@ -1059,13 +1051,13 @@ export default function PropertiesPage() {
               )}
 
               <div>
-                <label className="block text-sm font-medium text-[#6B1929]">{t("upload_photos")}</label>
+                <label className="block text-sm font-medium text-[#000000]">{t("upload_photos")}</label>
                 <input
                   type="file"
                   accept="image/*"
                   multiple
                   onChange={handleFileSelect}
-                  className="mt-2 w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-[#6B1929] file:mr-4 file:rounded-md file:border-0 file:bg-[#6B1929] file:px-3 file:py-1.5 file:text-xs file:font-medium file:text-white hover:file:bg-[#243a5e] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                  className="mt-2 w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-[#000000] file:mr-4 file:rounded-md file:border-0 file:bg-[#000000] file:px-3 file:py-1.5 file:text-xs file:font-medium file:text-white hover:file:bg-[#243a5e] focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
                 />
                 {imageFiles.length > 0 && (
                   <p className="mt-1.5 text-xs text-gray-600">{imageFiles.length} file(s) selected for upload</p>
@@ -1076,14 +1068,14 @@ export default function PropertiesPage() {
                 <button
                   type="button"
                   onClick={() => cleanupAndClose()}
-                  className="rounded-lg border border-gray-300 bg-white px-6 py-2.5 text-sm font-semibold text-[#6B1929] transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  className="rounded-lg border border-gray-300 bg-white px-6 py-2.5 text-sm font-semibold text-[#000000] transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 >
                   {t("cancel")}
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="rounded-lg bg-[#C9A55A] px-6 py-2.5 text-sm font-semibold text-[#6B1929] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+                  className="rounded-lg bg-[#C9A55A] px-6 py-2.5 text-sm font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
                 >
                   {isSaving ? t("saving") : t("save")}
                 </button>

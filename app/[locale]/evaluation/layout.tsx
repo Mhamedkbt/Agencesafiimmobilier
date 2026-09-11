@@ -11,17 +11,17 @@ export async function generateMetadata({
   const { locale } = await params
   const siteUrl = getSiteUrl()
   const titles: Record<string, string> = {
-    fr: 'Évaluation Gratuite — BSI Properties',
-    en: 'Free Property Evaluation — BSI Properties',
-    ar: 'تقييم عقاري مجاني — BSI Properties',
-    es: 'Evaluación Gratuita — BSI Properties',
+    fr: 'Évaluation Gratuite — Appartsimo',
+    en: 'Free Property Evaluation — Appartsimo',
+    ar: 'تقييم عقاري مجاني — Appartsimo',
+    es: 'Evaluación Gratuita — Appartsimo',
   }
   return {
     title: titles[locale] ?? titles.fr,
     description: 'Obtenez une évaluation gratuite de votre bien immobilier au Maroc.',
-    alternates: {
-      canonical: `${siteUrl}/${locale}/evaluation`,
-    },
+    // alternates: {
+    //   canonical: `${siteUrl}/${locale}/evaluation`,
+    // },
   }
 }
 

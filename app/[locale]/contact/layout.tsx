@@ -11,14 +11,14 @@ export async function generateMetadata({
   const { locale } = await params
   const siteUrl = getSiteUrl()
   const titles: Record<string, string> = {
-    fr: 'Contact — BSI Properties',
-    en: 'Contact — BSI Properties',
-    ar: 'اتصل بنا — BSI Properties',
-    es: 'Contacto — BSI Properties',
+    fr: 'Contact — Appartsimo',
+    en: 'Contact — Appartsimo',
+    ar: 'اتصل بنا — Appartsimo',
+    es: 'Contacto — Appartsimo',
   }
   return {
     title: titles[locale] ?? titles.fr,
-    description: 'Contactez BSI Properties pour toute question sur nos propriétés au Maroc.',
+    description: 'Contactez Appartsimo pour toute question sur nos propriétés au Maroc.',
     alternates: {
       canonical: `${siteUrl}/${locale}/contact`,
     },

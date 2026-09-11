@@ -34,7 +34,7 @@ const navItems = [
 function getIcon(iconType: string) {
   switch (iconType) {
     case "dashboard":
-  return <Squares2X2Icon className="h-5 w-5" />;
+      return <Squares2X2Icon className="h-5 w-5" />;
     case "properties":
       return (
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -47,8 +47,8 @@ function getIcon(iconType: string) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
         </svg>
       );
-      case "evaluations":
-        return <ClipboardDocumentCheckIcon className="h-5 w-5" />;
+    case "evaluations":
+      return <ClipboardDocumentCheckIcon className="h-5 w-5" />;
     default:
       return null;
   }
@@ -116,12 +116,12 @@ export default function MessagesPage() {
     try {
       const newRead = !currentRead;
       console.log(`Toggling message ${id} from ${currentRead} to ${newRead}`);
-      
+
       const { error } = await supabase
         .from("messages")
         .update({ read: newRead })
         .eq("id", id);
-      
+
       if (error) {
         console.error("Supabase error updating message read status:", {
           message: error.message,
@@ -133,7 +133,7 @@ export default function MessagesPage() {
       }
 
       console.log(`Successfully updated message ${id} to read=${newRead}`);
-      
+
       setMessages((prev) =>
         prev.map((m) => {
           if (m.id === id) {
@@ -212,9 +212,8 @@ export default function MessagesPage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#6B1929] text-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:top-auto top-16 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#000000] text-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:top-auto top-16 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="flex flex-col h-full">
           <nav className="flex-1 px-4 pt-6 space-y-2">
@@ -235,7 +234,7 @@ export default function MessagesPage() {
             <button
               onClick={handleLogout}
               disabled={logoutLoading}
-              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#6B1929] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
@@ -257,7 +256,7 @@ export default function MessagesPage() {
         <div className="p-4 sm:p-6 md:p-8 w-full overflow-x-hidden pt-4 md:pt-0">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="mb-4 inline-flex md:hidden items-center justify-center rounded-lg p-2 text-[#6B1929] hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+            className="mb-4 inline-flex md:hidden items-center justify-center rounded-lg p-2 text-[#000000] hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
             aria-label="Toggle menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -270,7 +269,7 @@ export default function MessagesPage() {
           </button>
 
           <div className="mt-8 mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#6B1929]">{t("manage_messages_title")}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#000000]">{t("manage_messages_title")}</h2>
             <p className="mt-1 text-sm text-gray-600">{messages.length} message{messages.length !== 1 ? "s" : ""}</p>
           </div>
 
@@ -292,17 +291,16 @@ export default function MessagesPage() {
               {messages.map((message) => (
                 <div
                   key={message.id}
-                  className={`rounded-lg border p-4 cursor-pointer transition-all ${
-                    !message.read
+                  className={`rounded-lg border p-4 cursor-pointer transition-all ${!message.read
                       ? "border-[#C9A55A] bg-[#C9A55A]/10 shadow-sm hover:shadow-md"
                       : "border-gray-100 bg-white hover:shadow-md"
-                  }`}
+                    }`}
                   onClick={() => openMessage(message)}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <h3 className={`text-sm font-semibold ${message.read ? "text-gray-600" : "text-[#6B1929]"}`}>
+                        <h3 className={`text-sm font-semibold ${message.read ? "text-gray-600" : "text-[#000000]"}`}>
                           {message.name}
                         </h3>
                         {!message.read && (
@@ -316,29 +314,29 @@ export default function MessagesPage() {
                       <p className="text-xs text-gray-400 mt-2">{formatDate(message.created_at)}</p>
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
-                    <button
-  onClick={(e) => {
-    e.stopPropagation();
-    handleToggleStatus(message.id, message.read);
-  }}
-  className="p-2 rounded-lg text-gray-400 hover:text-[#C9A55A] hover:bg-gray-100 transition-colors"
-  title={message.read ? "Mark as unread" : "Mark as read"}
->
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleToggleStatus(message.id, message.read);
+                        }}
+                        className="p-2 rounded-lg text-gray-400 hover:text-[#C9A55A] hover:bg-gray-100 transition-colors"
+                        title={message.read ? "Mark as unread" : "Mark as read"}
+                      >
 
-    <ClipboardDocumentCheckIcon className="h-5 w-5" />
+                        <ClipboardDocumentCheckIcon className="h-5 w-5" />
 
-</button>
+                      </button>
 
-<button
-  onClick={(e) => {
-    e.stopPropagation();
-    window.location.href = `mailto:${message.email}`;
-  }}
-  className="p-2 rounded-lg text-gray-400 hover:text-blue-500 hover:bg-blue-50 transition-colors"
-  title="Reply via email"
->
-  <EnvelopeIcon className="h-5 w-5" />
-</button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.location.href = `mailto:${message.email}`;
+                        }}
+                        className="p-2 rounded-lg text-gray-400 hover:text-blue-500 hover:bg-blue-50 transition-colors"
+                        title="Reply via email"
+                      >
+                        <EnvelopeIcon className="h-5 w-5" />
+                      </button>
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -348,8 +346,8 @@ export default function MessagesPage() {
                         title="Delete message"
                       >
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
                       </button>
                     </div>
                   </div>
@@ -365,7 +363,7 @@ export default function MessagesPage() {
           <div className="w-full max-w-2xl max-h-screen overflow-y-auto rounded-xl bg-white shadow-2xl">
             <div className="sticky top-0 border-b border-gray-200 bg-white p-6 sm:p-8 flex items-start justify-between">
               <div>
-                <h3 className="text-2xl font-bold text-[#6B1929]">Message from {selectedMessage.name}</h3>
+                <h3 className="text-2xl font-bold text-[#000000]">Message from {selectedMessage.name}</h3>
                 <p className="mt-1 text-sm text-gray-600">{formatDate(selectedMessage.created_at)}</p>
               </div>
               <button
@@ -382,21 +380,21 @@ export default function MessagesPage() {
               <div className="bg-gray-50 rounded-lg p-4">
                 <h4 className="text-sm font-semibold text-gray-600 mb-2">Sender Information</h4>
                 <div className="space-y-2 text-sm">
-                <p>
-  <span className="font-medium text-[#6B1929]">Name:</span>{" "}
-  <span className="text-[#C9A55A]">
-    {selectedMessage.name}
-  </span>
-</p>
                   <p>
-                    <span className="font-medium text-[#6B1929]">Email:</span>{" "}
+                    <span className="font-medium text-[#000000]">Name:</span>{" "}
+                    <span className="text-[#C9A55A]">
+                      {selectedMessage.name}
+                    </span>
+                  </p>
+                  <p>
+                    <span className="font-medium text-[#000000]">Email:</span>{" "}
                     <a href={`mailto:${selectedMessage.email}`} className="text-[#C9A55A] hover:underline">
                       {selectedMessage.email}
                     </a>
                   </p>
                   {selectedMessage.phone && (
                     <p>
-                      <span className="font-medium text-[#6B1929]">Phone:</span>{" "}
+                      <span className="font-medium text-[#000000]">Phone:</span>{" "}
                       <a href={`tel:${selectedMessage.phone}`} className="text-[#C9A55A] hover:underline">
                         {selectedMessage.phone}
                       </a>
@@ -415,7 +413,7 @@ export default function MessagesPage() {
                   onClick={() => {
                     handleToggleStatus(selectedMessage.id, selectedMessage.read);
                   }}
-                  className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-[#6B1929] transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-[#000000] transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 >
                   {selectedMessage.read ? "Mark as Unread" : "Mark as Read"}
                 </button>
@@ -447,7 +445,7 @@ export default function MessagesPage() {
             <div className="p-6 sm:p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-2">{t("delete_message")}</h3>
               <p className="text-gray-700 mb-6">Are you sure you want to permanently delete this message? This action cannot be undone.</p>
-              
+
               <div className="flex gap-3 justify-end">
                 <button
                   onClick={() => setDeleteConfirmId(null)}

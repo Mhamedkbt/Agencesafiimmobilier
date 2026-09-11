@@ -10,9 +10,9 @@ export const dynamic = 'force-dynamic'
 const isVideoFile = (file: File): boolean => file.type.startsWith('video/')
 
 const inputClassName =
-  'w-full rounded-lg border border-gray-200 px-4 py-3 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30'
+  'w-full rounded-lg border border-gray-200 px-4 py-3 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30'
 
-const labelClassName = 'mb-1.5 block text-sm font-medium text-[#6B1929]'
+const labelClassName = 'mb-1.5 block text-sm font-medium text-[#000000]'
 
 const stepIcons = [
   (
@@ -197,7 +197,7 @@ export default function EvaluationPage() {
 
   return (
     <div>
-      <section className="bg-[#6B1929] px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-[#000000] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             {t('request_evaluation')}
@@ -375,181 +375,181 @@ export default function EvaluationPage() {
                 </div>
 
                 <div>
-  <label className={labelClassName}>
-    {t('upload_photos')}
-  </label>
+                  <label className={labelClassName}>
+                    {t('upload_photos')}
+                  </label>
 
-  <div
-    className="relative w-full rounded-lg border-2 border-dashed border-gray-200 
+                  <div
+                    className="relative w-full rounded-lg border-2 border-dashed border-gray-200 
                bg-gray-50 px-4 py-6 text-center hover:border-[#C9A55A] 
                hover:bg-[#C9A55A]/5 transition-all duration-200 cursor-pointer"
-    onClick={() => fileInputRef.current?.click()}
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="mx-auto h-8 w-8 text-gray-400 mb-2"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={1.5}
-        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-      />
-    </svg>
-    <p className="text-sm font-medium text-[#6B1929]">
-      {t('upload_click')}
-    </p>
-    <p className="text-xs text-gray-500 mt-1">
-      {t('upload_hint')}
-    </p>
-    <input
-      ref={fileInputRef}
-      name="photos"
-      type="file"
-      accept="image/*"
-      multiple
-      className="hidden"
-      onChange={handleFileChange}
-    />
-  </div>
-
-  {selectedFiles.length > 0 && (
-    <div className="mt-3">
-      <div className="flex flex-wrap gap-2">
-        {selectedFiles.map((file, index) => (
-          <div
-            key={`${file.name}-${file.size}-${index}`}
-            className="relative h-20 w-20 overflow-visible rounded-lg 
-                       border-2 border-gray-200 flex-shrink-0 bg-white"
-          >
-            {/* Wrapper to handle rounded corners inside overflow-visible block */}
-            <div className="w-full h-full rounded-md overflow-hidden relative">
-              {isVideoFile(file) ? (
-                <div className="relative h-full w-full bg-gray-900 
-                                flex items-center justify-center overflow-hidden">
-                  <video
-                    src={URL.createObjectURL(file)}
-                    className="h-full w-full object-cover"
-                    muted
-                    preload="metadata"
-                  />
-                  <div className="absolute inset-0 flex items-center 
-                                  justify-center bg-black/40">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         className="w-5 h-5 text-white" fill="currentColor"
-                         viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="mx-auto h-8 w-8 text-gray-400 mb-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
+                      />
                     </svg>
+                    <p className="text-sm font-medium text-[#000000]">
+                      {t('upload_click')}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {t('upload_hint')}
+                    </p>
+                    <input
+                      ref={fileInputRef}
+                      name="photos"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      className="hidden"
+                      onChange={handleFileChange}
+                    />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 text-center
-                                  bg-black/60 text-white text-[10px] py-0.5 font-medium">
-                    {t('video')}
-                  </div>
-                </div>
-              ) : (
-                <img
-                  src={URL.createObjectURL(file)}
-                  alt={`Preview ${index + 1}`}
-                  className="h-full w-full object-cover"
-                  onError={(e) => { e.currentTarget.style.display = 'none' }}
-                />
-              )}
 
-              {/* Number Badge */}
-              <div className="absolute top-1 left-1 bg-black/50 text-white 
+                  {selectedFiles.length > 0 && (
+                    <div className="mt-3">
+                      <div className="flex flex-wrap gap-2">
+                        {selectedFiles.map((file, index) => (
+                          <div
+                            key={`${file.name}-${file.size}-${index}`}
+                            className="relative h-20 w-20 overflow-visible rounded-lg 
+                       border-2 border-gray-200 flex-shrink-0 bg-white"
+                          >
+                            {/* Wrapper to handle rounded corners inside overflow-visible block */}
+                            <div className="w-full h-full rounded-md overflow-hidden relative">
+                              {isVideoFile(file) ? (
+                                <div className="relative h-full w-full bg-gray-900 
+                                flex items-center justify-center overflow-hidden">
+                                  <video
+                                    src={URL.createObjectURL(file)}
+                                    className="h-full w-full object-cover"
+                                    muted
+                                    preload="metadata"
+                                  />
+                                  <div className="absolute inset-0 flex items-center 
+                                  justify-center bg-black/40">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                      className="w-5 h-5 text-white" fill="currentColor"
+                                      viewBox="0 0 24 24">
+                                      <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                  </div>
+                                  <div className="absolute bottom-0 left-0 right-0 text-center
+                                  bg-black/60 text-white text-[10px] py-0.5 font-medium">
+                                    {t('video')}
+                                  </div>
+                                </div>
+                              ) : (
+                                <img
+                                  src={URL.createObjectURL(file)}
+                                  alt={`Preview ${index + 1}`}
+                                  className="h-full w-full object-cover"
+                                  onError={(e) => { e.currentTarget.style.display = 'none' }}
+                                />
+                              )}
+
+                              {/* Number Badge */}
+                              <div className="absolute top-1 left-1 bg-black/50 text-white 
                               text-[10px] rounded-full w-4 h-4 flex items-center 
                               justify-center font-medium">
-                {index + 1}
-              </div>
-            </div>
+                                {index + 1}
+                              </div>
+                            </div>
 
-            {/* Absolute Fixed Delete Button - Visible constantly without hover */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation()
-                removeFile(index)
-              }}
-              className="absolute -top-1.5 -right-1.5 bg-red-500 hover:bg-red-600 text-white 
+                            {/* Absolute Fixed Delete Button - Visible constantly without hover */}
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                removeFile(index)
+                              }}
+                              className="absolute -top-1.5 -right-1.5 bg-red-500 hover:bg-red-600 text-white 
                          rounded-full w-5 h-5 flex items-center justify-center shadow-md 
                          transition-colors z-20"
-              title={t('remove_file')}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-3.5 w-3.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        ))}
+                              title={t('remove_file')}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-3.5 w-3.5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2.5}
+                                  d="M6 18L18 6M6 6l12 12"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        ))}
 
-        <button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="h-20 w-20 rounded-lg border-2 border-dashed border-gray-300 
+                        <button
+                          type="button"
+                          onClick={() => fileInputRef.current?.click()}
+                          className="h-20 w-20 rounded-lg border-2 border-dashed border-gray-300 
                      flex flex-col items-center justify-center gap-1
                      hover:border-[#C9A55A] hover:bg-[#C9A55A]/5 
                      transition-all duration-200 flex-shrink-0"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-gray-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 4v16m8-8H4"
-            />
-          </svg>
-          <span className="text-xs text-gray-400">{t('add_more')}</span>
-        </button>
-      </div>
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-gray-400"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 4v16m8-8H4"
+                            />
+                          </svg>
+                          <span className="text-xs text-gray-400">{t('add_more')}</span>
+                        </button>
+                      </div>
 
-      <div className="mt-2 flex items-center justify-between">
-        <p className="text-xs text-gray-500">
-          {(() => {
-            const videoCount = selectedFiles.filter(f => f.type.startsWith('video/')).length
-            const imageCount = selectedFiles.length - videoCount
-            const parts = []
-            if (imageCount > 0) parts.push(t('photos_only', { count: imageCount }))
-            if (videoCount > 0) parts.push(t('videos_only', { count: videoCount }))
-            return parts.length === 2
-              ? t('photos_selected', { images: parts[0], videos: parts[1] })
-              : parts.join(' + ')
-          })()}
-        </p>
-        <button
-          type="button"
-          onClick={() => {
-            setSelectedFiles([])
-            if (fileInputRef.current) fileInputRef.current.value = ''
-          }}
-          className="text-xs text-red-500 hover:text-red-700 
+                      <div className="mt-2 flex items-center justify-between">
+                        <p className="text-xs text-gray-500">
+                          {(() => {
+                            const videoCount = selectedFiles.filter(f => f.type.startsWith('video/')).length
+                            const imageCount = selectedFiles.length - videoCount
+                            const parts = []
+                            if (imageCount > 0) parts.push(t('photos_only', { count: imageCount }))
+                            if (videoCount > 0) parts.push(t('videos_only', { count: videoCount }))
+                            return parts.length === 2
+                              ? t('photos_selected', { images: parts[0], videos: parts[1] })
+                              : parts.join(' + ')
+                          })()}
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSelectedFiles([])
+                            if (fileInputRef.current) fileInputRef.current.value = ''
+                          }}
+                          className="text-xs text-red-500 hover:text-red-700 
                      font-medium transition-colors"
-        >
-          {t('remove_all')}
-        </button>
-      </div>
-    </div>
-  )}
-</div>
+                        >
+                          {t('remove_all')}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
 
                 {formError && (
                   <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3">
@@ -560,7 +560,7 @@ export default function EvaluationPage() {
                 <button
                   type="submit"
                   disabled={formSending}
-                  className="w-full rounded-lg bg-[#C9A55A] px-6 py-4 text-lg font-bold text-[#6B1929] shadow-md transition-colors hover:bg-[#D4B56A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A] focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full rounded-lg bg-[#C9A55A] px-6 py-4 text-lg font-bold text-[#000000] shadow-md transition-colors hover:bg-[#D4B56A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A] focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {formSending ? (
                     <span className="flex items-center justify-center gap-2">
@@ -595,7 +595,7 @@ export default function EvaluationPage() {
           )}
 
           <div className="mt-16">
-            <h2 className="text-center text-2xl font-bold text-[#6B1929] sm:text-3xl">
+            <h2 className="text-center text-2xl font-bold text-[#000000] sm:text-3xl">
               {t('how_it_works')}
             </h2>
             <div className="mx-auto mt-2 h-1 w-16 rounded-full bg-[#C9A55A]" />
@@ -606,13 +606,13 @@ export default function EvaluationPage() {
                   key={step.title}
                   className="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-md"
                 >
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#6B1929] text-[#C9A55A]">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#000000] text-[#C9A55A]">
                     {stepIcons[index]}
                   </div>
                   <span className="mt-4 inline-block rounded-full bg-[#C9A55A]/15 px-3 py-0.5 text-xs font-semibold text-[#C9A55A]">
                     {t('step')} {index + 1}
                   </span>
-                  <h3 className="mt-3 text-lg font-bold text-[#6B1929]">
+                  <h3 className="mt-3 text-lg font-bold text-[#000000]">
                     {t(step.title)}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-gray-600">

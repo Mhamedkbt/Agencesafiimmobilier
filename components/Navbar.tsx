@@ -45,9 +45,8 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className={`sticky top-0 z-50 bg-[#6B1929] transition-shadow duration-300 ${
-        scrolled ? "shadow-lg shadow-black/25" : "shadow-md"
-      }`}
+      className={`sticky top-0 z-50 bg-[#000000] transition-shadow duration-300 ${scrolled ? "shadow-lg shadow-black/25" : "shadow-md"
+        }`}
     >
       <nav className="mx-auto flex h-22 max-w-7xl items-center justify-between px-4 py-[2px] sm:px-6 lg:px-8">
         <Link
@@ -55,7 +54,7 @@ export default function Navbar() {
           className="flex items-center"
           onClick={() => setMenuOpen(false)}
         >
-          <img src="/images/bsiLogo.png" className="h-18 w-auto" alt="BSI Properties" />
+          <img src="/images/logoImg.png" className="h-22 w-auto" alt="Appartsimo" />
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -91,10 +90,10 @@ export default function Navbar() {
           <LanguageSwitcher />
 
           <a
-            href="tel:+212620060000"
+            href="tel:+212660804633"
             className="rounded-md bg-[#C9A55A] px-5 py-2.5 text-sm font-semibold text-[#1a1a1a] transition-colors hover:bg-[#D4B56A] lg:text-base"
           >
-            +212 620-060000
+            +212 660-804633
           </a>
         </div>
 
@@ -150,7 +149,7 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-white/10 bg-[#6B1929] md:hidden">
+        <div className="border-t border-white/10 bg-[#000000] md:hidden">
           <ul className="flex flex-col px-4 py-4 sm:px-6">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -165,10 +164,10 @@ export default function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href="tel:+212620060000"
+                href="tel:+212660804633"
                 className="block rounded-md bg-[#C9A55A] px-4 py-3 text-center text-base font-semibold text-[#1a1a1a] transition-colors hover:bg-[#D4B56A]"
               >
-                +212 620-060000
+                +212 660-804633
               </a>
             </li>
             <li className="pt-4 mt-4 border-t border-white/10">

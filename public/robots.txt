@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bsiproperties.vercel.app/sitemap.xml
+Sitemap: https://appartsimoweb.vercel.app/sitemap.xml
 
 Disallow: /admin/
 Disallow: /api/

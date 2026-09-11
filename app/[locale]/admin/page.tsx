@@ -43,11 +43,11 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#6B1929] px-4 sm:px-6 lg:px-8">
+    <div className="flex min-h-screen items-center justify-center bg-[#000000] px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-md rounded-2xl border border-gray-200/10 bg-white p-8 shadow-2xl">
         <div className="text-center">
           <h1 className="text-2xl font-bold sm:text-3xl">
-            <span className="text-[#6B1929]">{t("brand_name")}</span>
+            <span className="text-[#000000]">{t("brand_name")}</span>
             <br />
             <span className="text-[#C9A55A]">{t("admin_panel")}</span>
           </h1>
@@ -64,7 +64,7 @@ export default function AdminPage() {
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-[#6B1929]">
+            <label htmlFor="email" className="block text-sm font-medium text-[#000000]">
               {t("email_address")}
             </label>
             <input
@@ -74,12 +74,12 @@ export default function AdminPage() {
               placeholder="admin@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-3 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+              className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-3 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-[#6B1929]">
+            <label htmlFor="password" className="block text-sm font-medium text-[#000000]">
               {t("password")}
             </label>
             <input
@@ -89,14 +89,14 @@ export default function AdminPage() {
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-3 text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+              className="mt-2 w-full rounded-lg border border-gray-200 px-4 py-3 text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-[#C9A55A] px-4 py-3 text-base font-semibold text-[#6B1929] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A] focus:ring-offset-2"
+            className="w-full rounded-lg bg-[#C9A55A] px-4 py-3 text-base font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A] focus:ring-offset-2"
           >
             {loading ? t("signing_in") : t("sign_in")}
           </button>

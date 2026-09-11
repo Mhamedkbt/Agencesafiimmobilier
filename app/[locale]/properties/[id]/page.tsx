@@ -185,7 +185,7 @@ export default function PropertyPage() {
               />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-[#6B1929]">
+          <h1 className="text-2xl font-bold text-[#000000]">
             {t('property_not_found')}
           </h1>
           <p className="mt-2 text-gray-500">
@@ -193,7 +193,7 @@ export default function PropertyPage() {
           </p>
           <Link
             href={`/${locale}/properties`}
-            className="mt-6 inline-block rounded-lg bg-[#C9A55A] px-8 py-3 font-semibold text-[#6B1929] hover:bg-[#D4B56A] transition-colors"
+            className="mt-6 inline-block rounded-lg bg-[#C9A55A] px-8 py-3 font-semibold text-[#000000] hover:bg-[#D4B56A] transition-colors"
           >
             {t('browse_all')}
           </Link>
@@ -228,13 +228,13 @@ export default function PropertyPage() {
             className="flex items-center justify-between border-b border-gray-100 pb-3 last:border-0 last:pb-0"
           >
             <span className="text-sm text-gray-500">{detail.label}</span>
-            <span className="text-sm font-semibold text-[#6B1929] capitalize">{detail.value}</span>
+            <span className="text-sm font-semibold text-[#000000] capitalize">{detail.value}</span>
           </li>
         ))}
       </ul>
 
       <a
-        href={`https://wa.me/212620060000?text=Hello, I'm interested in the property: ${encodeURIComponent(property.title ?? '')} - ${encodeURIComponent(`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://bsiproperties.vercel.app/'}/${locale}/properties/${property.id}`)}`}
+        href={`https://wa.me/212660804633?text=Hello, I'm interested in the property: ${encodeURIComponent(property.title ?? '')} - ${encodeURIComponent(`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://appartsimoweb.vercel.app/'}/${locale}/properties/${property.id}`)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#20bd5a]"
@@ -250,7 +250,7 @@ export default function PropertyPage() {
   // Shared Request Information Form Content to avoid repeating markup
   const requestInfoFormContent = (
     <>
-      <h3 className="text-lg font-bold text-[#6B1929]">
+      <h3 className="text-lg font-bold text-[#000000]">
         {t('request_information')}
       </h3>
       <p className="mt-1 text-sm text-gray-500">
@@ -274,7 +274,7 @@ export default function PropertyPage() {
             </p>
           )}
           <div>
-            <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-[#6B1929]">
+            <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-[#000000]">
               {t('name')}
             </label>
             <input
@@ -284,11 +284,11 @@ export default function PropertyPage() {
               placeholder={t('name_placeholder')}
               value={form.name}
               onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
             />
           </div>
           <div>
-            <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-[#6B1929]">
+            <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-[#000000]">
               {t('phone')}
             </label>
             <input
@@ -298,11 +298,11 @@ export default function PropertyPage() {
               placeholder={t('phone_placeholder')}
               value={form.phone}
               onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
             />
           </div>
           <div>
-            <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-[#6B1929]">
+            <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-[#000000]">
               {t('email')}
             </label>
             <input
@@ -312,11 +312,11 @@ export default function PropertyPage() {
               placeholder={t('email_placeholder')}
               value={form.email}
               onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
             />
           </div>
           <div>
-            <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-[#6B1929]">
+            <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-[#000000]">
               {t('message')}
             </label>
             <textarea
@@ -326,13 +326,13 @@ export default function PropertyPage() {
               placeholder={t('message_placeholder')}
               value={form.message}
               onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-              className="w-full resize-none rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#6B1929] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+              className="w-full resize-none rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-[#000000] placeholder:text-gray-400 focus:border-[#C9A55A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
             />
           </div>
           <button
             type="submit"
             disabled={formSending}
-            className="w-full rounded-lg bg-[#C9A55A] px-6 py-3 text-sm font-semibold text-[#6B1929] transition-colors hover:bg-[#D4B56A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A] focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full rounded-lg bg-[#C9A55A] px-6 py-3 text-sm font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A] focus:outline-none focus:ring-2 focus:ring-[#C9A55A] focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {formSending ? t('sending') : t('send_message')}
           </button>
@@ -366,7 +366,7 @@ export default function PropertyPage() {
             />
           )
         ) : (
-          <div className="h-full w-full bg-gradient-to-br from-[#6B1929] to-[#4A1020] flex items-center justify-center">
+          <div className="h-full w-full bg-gradient-to-br from-[#000000] to-[#000000] flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-20 h-20 text-white/20"
@@ -383,7 +383,7 @@ export default function PropertyPage() {
             </svg>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#6B1929]/90 via-[#6B1929]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/90 via-[#000000]/30 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 px-4 pb-8 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="text-sm font-medium uppercase tracking-wider text-[#C9A55A]">
@@ -398,7 +398,7 @@ export default function PropertyPage() {
 
       <section className="px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
-          
+
           {/* MAIN LEFT COLUMN */}
           <div className="lg:col-span-2 space-y-8">
             {hasImages && (
@@ -446,7 +446,7 @@ export default function PropertyPage() {
                             scrollContainerRef.current.scrollBy({ left: -200, behavior: 'smooth' })
                           }
                         }}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#6B1929]/80 hover:bg-[#6B1929] text-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100 shadow-lg"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#000000]/80 hover:bg-[#000000] text-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100 shadow-lg"
                         aria-label="Scroll thumbnails left"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -464,11 +464,10 @@ export default function PropertyPage() {
                             key={index}
                             type="button"
                             onClick={() => setActiveImage(index)}
-                            className={`relative flex-shrink-0 w-24 h-20 sm:w-32 sm:h-24 overflow-hidden rounded-lg transition-all duration-200 cursor-pointer ${
-                              activeImage === index
-                                ? 'border-2 border-[#C9A55A] opacity-100'
-                                : 'border-2 border-transparent opacity-70 hover:opacity-100'
-                            }`}
+                            className={`relative flex-shrink-0 w-24 h-20 sm:w-32 sm:h-24 overflow-hidden rounded-lg transition-all duration-200 cursor-pointer ${activeImage === index
+                              ? 'border-2 border-[#C9A55A] opacity-100'
+                              : 'border-2 border-transparent opacity-70 hover:opacity-100'
+                              }`}
                           >
                             {isVideoUrl(src) ? (
                               <div className="relative h-full w-full">
@@ -480,7 +479,7 @@ export default function PropertyPage() {
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded">
                                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
+                                    <path d="M8 5v14l11-7z" />
                                   </svg>
                                 </div>
                               </div>
@@ -505,7 +504,7 @@ export default function PropertyPage() {
                             scrollContainerRef.current.scrollBy({ left: 200, behavior: 'smooth' })
                           }
                         }}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#6B1929]/80 hover:bg-[#6B1929] text-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100 shadow-lg"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#000000]/80 hover:bg-[#000000] text-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100 shadow-lg"
                         aria-label="Scroll thumbnails right"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -525,13 +524,13 @@ export default function PropertyPage() {
 
             {/* DESCRIPTION SECTION */}
             <div>
-              <h2 className="text-2xl font-bold text-[#6B1929] sm:text-3xl">
+              <h2 className="text-2xl font-bold text-[#000000] sm:text-3xl">
                 {t('description')}
               </h2>
               <div className="mt-2 h-1 w-16 rounded-full bg-[#C9A55A]" />
-              <p className="whitespace-pre-line text-[#6B1929] leading-relaxed">
-  {property.description}
-</p>
+              <p className="whitespace-pre-line text-[#000000] leading-relaxed">
+                {property.description}
+              </p>
               <p className="mt-4 leading-relaxed text-gray-600">
                 {t('viewing_text')}
               </p>
@@ -545,16 +544,16 @@ export default function PropertyPage() {
             {/* SIMILAR PROPERTIES */}
             {similarProperties.length > 0 && (
               <div className="mt-14">
-                <h2 className="text-2xl font-bold text-[#6B1929] sm:text-3xl">
+                <h2 className="text-2xl font-bold text-[#000000] sm:text-3xl">
                   {t('similar_properties')}
                 </h2>
                 <div className="mt-2 h-1 w-16 rounded-full bg-[#C9A55A]" />
                 <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {similarProperties.map((item) => (
                     <article
-                    key={item.id}
-                    className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl w-[95%] mx-auto sm:w-full"
-                  >
+                      key={item.id}
+                      className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl w-[95%] mx-auto sm:w-full"
+                    >
                       {item.images && item.images.length > 0 ? (
                         isVideoUrl(item.images[0]) ? (
                           <div className="relative h-40 w-full overflow-hidden">
@@ -582,7 +581,7 @@ export default function PropertyPage() {
                           />
                         )
                       ) : (
-                        <div className="h-40 w-full bg-gradient-to-br from-[#6B1929] to-[#4A1020] flex items-center justify-center">
+                        <div className="h-40 w-full bg-gradient-to-br from-[#000000] to-[#000000] flex items-center justify-center">
                           <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                           </svg>
@@ -590,11 +589,11 @@ export default function PropertyPage() {
                       )}
                       <div className="p-4">
                         {item.type && (
-                          <span className="rounded-full bg-[#6B1929] px-2.5 py-0.5 text-xs font-medium text-white capitalize">
+                          <span className="rounded-full bg-[#000000] px-2.5 py-0.5 text-xs font-medium text-white capitalize">
                             {item.type}
                           </span>
                         )}
-                        <h3 className="mt-2 font-semibold text-[#6B1929] line-clamp-1">
+                        <h3 className="mt-2 font-semibold text-[#000000] line-clamp-1">
                           {item.title ?? 'Property'}
                         </h3>
                         <p className="mt-1 text-sm text-gray-500">
@@ -605,7 +604,7 @@ export default function PropertyPage() {
                         </p>
                         <Link
                           href={`/${locale}/properties/${item.id}`}
-                          className="mt-3 block w-full rounded-lg bg-[#C9A55A] py-2.5 text-center text-sm font-semibold text-[#6B1929] transition-colors hover:bg-[#D4B56A]"
+                          className="mt-3 block w-full rounded-lg bg-[#C9A55A] py-2.5 text-center text-sm font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A]"
                         >
                           {t('view_details')}
                         </Link>
@@ -620,7 +619,7 @@ export default function PropertyPage() {
           {/* DESKTOP STICKY ASIDE COLUMN */}
           <aside className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
-              
+
               {/* PC ONLY: Price and Details Box (Hidden on mobile devices completely) */}
               <div className="hidden lg:block rounded-xl border border-gray-100 bg-white p-6 shadow-lg">
                 {propertyDetailsCardContent}
@@ -712,18 +711,17 @@ export default function PropertyPage() {
                     e.stopPropagation()
                     setLightboxIndex(index)
                   }}
-                  className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all duration-200 flex-shrink-0 ${
-                    index === lightboxIndex
-                      ? 'border-[#C9A55A] opacity-100 scale-110'
-                      : 'border-white/20 opacity-50 hover:opacity-80'
-                  }`}
+                  className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all duration-200 flex-shrink-0 ${index === lightboxIndex
+                    ? 'border-[#C9A55A] opacity-100 scale-110'
+                    : 'border-white/20 opacity-50 hover:opacity-80'
+                    }`}
                 >
                   {isVideoUrl(url) ? (
                     <div className="relative w-full h-full">
                       <video src={url} className="w-full h-full object-cover" muted preload="metadata" />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
+                          <path d="M8 5v14l11-7z" />
                         </svg>
                       </div>
                     </div>

@@ -35,22 +35,22 @@ function getIcon(iconType: string) {
     case "dashboard":
       return <Squares2X2Icon className="h-5 w-5" />;
 
-      case "properties":
-        return (
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-            />
-          </svg>
-        );
+    case "properties":
+      return (
+        <svg
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+          />
+        </svg>
+      );
 
     case "messages":
       return <EnvelopeIcon className="h-5 w-5" />;
@@ -172,9 +172,8 @@ export default function DashboardPage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#6B1929] text-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:top-auto top-16 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#000000] text-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:top-auto top-16 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="flex flex-col h-full">
           <nav className="flex-1 px-4 pt-6 space-y-2">
@@ -195,7 +194,7 @@ export default function DashboardPage() {
             <button
               onClick={handleLogout}
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#6B1929] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
@@ -217,7 +216,7 @@ export default function DashboardPage() {
         <div className="p-4 sm:p-6 lg:p-8 pt-4 md:pt-0">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="mb-4 inline-flex md:hidden items-center justify-center rounded-lg p-2 text-[#6B1929] hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+            className="mb-4 inline-flex md:hidden items-center justify-center rounded-lg p-2 text-[#000000] hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
             aria-label="Toggle menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -230,7 +229,7 @@ export default function DashboardPage() {
           </button>
 
           <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#6B1929]">{t("dashboard_title")}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#000000]">{t("dashboard_title")}</h2>
             <p className="mt-2 text-sm sm:text-base text-gray-600">{t("dashboard_subtitle")}</p>
           </div>
 
@@ -262,18 +261,18 @@ export default function DashboardPage() {
           </div>
 
           <div className="mt-8 rounded-xl border border-gray-100 bg-white p-4 sm:p-6 shadow-md">
-            <h3 className="text-lg font-bold text-[#6B1929]">{t("quick_actions_title")}</h3>
+            <h3 className="text-lg font-bold text-[#000000]">{t("quick_actions_title")}</h3>
             <div className="mt-4 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
-              <Link href={`/${locale}/admin/properties`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#6B1929] transition-colors hover:bg-[#C9A55A]/10">
+              <Link href={`/${locale}/admin/properties`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
                 {t("manage_properties")}
               </Link>
-              <Link href={`/${locale}/admin/messages`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#6B1929] transition-colors hover:bg-[#C9A55A]/10">
+              <Link href={`/${locale}/admin/messages`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
                 {t("view_messages")}
               </Link>
-              <Link href={`/${locale}/admin/evaluations`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#6B1929] transition-colors hover:bg-[#C9A55A]/10">
+              <Link href={`/${locale}/admin/evaluations`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
                 {t("review_evaluations")}
               </Link>
-              <Link href={`/${locale}`} className="rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-center font-medium text-[#6B1929] transition-colors hover:bg-gray-100">
+              <Link href={`/${locale}`} className="rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-gray-100">
                 {t("back_to_site")}
               </Link>
             </div>

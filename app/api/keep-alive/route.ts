@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
 
-//  Ensure the route is evaluated on each request and not statically cached
+// Ensure the route is evaluated on each request and not statically cached
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {

@@ -52,7 +52,7 @@ export function TestimonialsSlider() {
         <span className="text-xs font-bold uppercase tracking-widest text-[#C9A55A]">
           {t("label")}
         </span>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#6B1929] sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#000000] sm:text-4xl">
           {t("title")}
         </h2>
 
@@ -60,11 +60,10 @@ export function TestimonialsSlider() {
           {testimonialsData.map((testimonial, idx) => (
             <div
               key={testimonial.id}
-              className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
-                idx === currentSlide
+              className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${idx === currentSlide
                   ? "opacity-100 translate-x-0 pointer-events-auto"
                   : "opacity-0 translate-x-8 pointer-events-none"
-              }`}
+                }`}
             >
               <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -74,11 +73,11 @@ export function TestimonialsSlider() {
                 ))}
               </div>
 
-              <p className="text-xl sm:text-2xl text-[#6B1929] font-light max-w-2xl leading-relaxed italic">
+              <p className="text-xl sm:text-2xl text-[#000000] font-light max-w-2xl leading-relaxed italic">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
-              <h4 className="mt-6 text-base font-bold text-[#6B1929] tracking-wide">
+              <h4 className="mt-6 text-base font-bold text-[#000000] tracking-wide">
                 {testimonial.name}
               </h4>
               <p className="text-xs text-gray-400 mt-1 uppercase tracking-wider font-medium">
@@ -93,9 +92,8 @@ export function TestimonialsSlider() {
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === currentSlide ? "w-8 bg-[#C9A55A]" : "w-2 bg-gray-300 hover:bg-gray-400"
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? "w-8 bg-[#C9A55A]" : "w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
