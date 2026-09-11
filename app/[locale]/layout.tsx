@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: 'Appartsimo — Luxury Real Estate in Morocco',
     template: '%s | Appartsimo',
   },
-  description: 'Appartsimo is your luxury real estate agency in Morocco. Discover off-plan apartments, ready-to-move properties, and conciergerie services in Tangier, Tetouan, and Casablanca.',
+  description: 'Appartsimo is your luxury real estate agency in Morocco. Discover off-plan apartments, ready-to-move properties in Casablanca.',
   keywords: [
     'immobilier maroc',
     'agence immobilière maroc',
@@ -31,8 +31,6 @@ export const metadata: Metadata = {
     'achat immobilier maroc',
     'location immobilier maroc',
     'luxe immobilier maroc',
-    'tanger immobilier',
-    'tetouan immobilier',
     'casablanca immobilier',
     'Appartsimo',
     'real estate morocco',
@@ -52,7 +50,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: 'Appartsimo',
     title: 'Appartsimo — Luxury Real Estate in Morocco',
-    description: 'Discover exclusive properties in Morocco. Luxury real estate & conciergerie in Tangier, Tetouan, and Casablanca.',
+    description: 'Discover exclusive properties in Morocco. Luxury real estate in Casablanca.',
     images: [
       {
         url: '/images/logoImg.jpg',

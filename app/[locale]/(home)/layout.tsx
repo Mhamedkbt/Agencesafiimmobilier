@@ -16,10 +16,10 @@ export async function generateMetadata({
     es: 'Inicio — Appartsimo | Inmuebles de Lujo en Marruecos',
   }
   const descs: Record<string, string> = {
-    fr: 'Appartsimo — Immobilier de luxe et conciergerie au Maroc. Tanger, Tétouan, Casablanca.',
-    en: 'Appartsimo — Luxury real estate & conciergerie in Morocco. Tangier, Tetouan, Casablanca.',
-    ar: 'Appartsimo — عقارات فاخرة وخدمة كونسierge في المغرب. طنجة، تطوان، الدار البيضاء.',
-    es: 'Appartsimo — Inmuebles de lujo y conserjería en Marruecos.',
+    fr: 'Appartsimo — Immobilier de luxe au Maroc, Casablanca.',
+    en: 'Appartsimo — Luxury real estate in Morocco, Casablanca.',
+    ar: 'Appartsimo — عقارات فاخرة وخدمة كونسierge في المغرب. الدار البيضاء.',
+    es: 'Appartsimo — Inmuebles de lujo en Marruecos.',
   }
   return {
     title: titles[locale] ?? titles.fr,

@@ -8,7 +8,7 @@
   },
   "home": {
     "hero_title": "LÀ OÙ LES PROPRIÉTÉS RENCONTRENT LES OPPORTUNITÉS",
-    "hero_subtitle": "Appartsimo connecte les personnes aux maisons et les maisons aux personnes. Immobilier de Luxe & Conciergerie au Maroc",
+    "hero_subtitle": "Appartsimo connecte les personnes aux maisons et les maisons aux personnes. Immobilier de Luxe au Maroc",
     "loading_brand": "Appartsimo",
     "search_city_label": "Ville",
     "search_city_placeholder": "Casablanca, Marrakech...",
@@ -345,7 +345,7 @@
     "t3_text": "Une agence de confiance avec une excellente connaissance du marché marocain. Je recommande vivement pour tout investissement premium."
   },
   "footer": {
-    "description": "Appartsimo | Buy • Sell • Invest — Immobilier de Luxe & Conciergerie — TNG | TÉTOUAN | CASABLANCA",
+    "description": "Appartsimo | Buy • Sell • Invest — Immobilier de Luxe — CASABLANCA",
     "quick_links": "Liens rapides",
     "contact_info": "Informations de contact",
     "cities_we_serve": "Villes que nous desservons",
@@ -355,9 +355,6 @@
     "phone_secondary": "+212 617-414394",
     "email": "luxurioussuiteshotel@gmail.com",
     "brand_name": "Appartsimo",
-    "city_tangier": "Tanger",
-    "city_tetouan": "Tétouan",
-    "city_casablanca": "Casablanca",
-    "city_marrakech": "Marrakech"
+    "city_casablanca": "Casablanca"
   }
 }

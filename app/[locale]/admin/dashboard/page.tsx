@@ -269,9 +269,9 @@ export default function DashboardPage() {
               <Link href={`/${locale}/admin/messages`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
                 {t("view_messages")}
               </Link>
-              <Link href={`/${locale}/admin/evaluations`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
+              {/* <Link href={`/${locale}/admin/evaluations`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
                 {t("review_evaluations")}
-              </Link>
+              </Link> */}
               <Link href={`/${locale}`} className="rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-gray-100">
                 {t("back_to_site")}
               </Link>

@@ -12,7 +12,7 @@ const quickLinks = [
   // { href: "/evaluation", key: "evaluation" },
 ] as const;
 
-const cityKeys = ["city_tangier", "city_tetouan", "city_casablanca", "city_marrakech"] as const;
+const cityKeys = ["city_casablanca"] as const;
 
 const socialLinks = [
   {
