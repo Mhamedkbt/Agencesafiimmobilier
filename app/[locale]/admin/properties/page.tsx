@@ -649,6 +649,7 @@ export default function PropertiesPage() {
             >
               <option value="">{t("all_types")}</option>
               <option value="Apartment">{t("apartment")}</option>
+              <option value="Studio">{t("studio")}</option>
               <option value="Villa">{t("villa")}</option>
               <option value="Land">{t("land")}</option>
               <option value="Commercial">{t("commercial")}</option>
@@ -716,8 +717,8 @@ export default function PropertiesPage() {
                       <td className="px-4 py-3">
                         <span
                           className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${property.status === "Sale"
-                              ? "bg-green-100 text-green-800"
-                              : "bg-orange-100 text-orange-800"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-orange-100 text-orange-800"
                             }`}
                         >
                           {property.status}
@@ -730,8 +731,8 @@ export default function PropertiesPage() {
                         <button
                           onClick={() => handleToggleFeatured(property.id, property.featured)}
                           className={`inline-flex items-center justify-center rounded-full p-1.5 transition-colors ${property.featured
-                              ? "bg-[#C9A55A]/20 text-[#C9A55A]"
-                              : "bg-gray-100 text-gray-400"
+                            ? "bg-[#C9A55A]/20 text-[#C9A55A]"
+                            : "bg-gray-100 text-gray-400"
                             }`}
                         >
                           <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -815,6 +816,7 @@ export default function PropertiesPage() {
                   >
                     <option value="Apartment">Apartment</option>
                     <option value="Villa">Villa</option>
+                    <option value="Studio">Studio</option>
                     <option value="Land">Land</option>
                     <option value="Commercial">Commercial</option>
                   </select>
@@ -909,16 +911,16 @@ export default function PropertiesPage() {
                 <div>
                   <label className="block text-sm font-medium text-[#000000] mb-3">{t("current_images")}</label>
                   <div className={`${existingImages.length + previewImages.length > 4
-                      ? 'flex overflow-x-auto gap-2 pb-2'
-                      : 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3'
+                    ? 'flex overflow-x-auto gap-2 pb-2'
+                    : 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3'
                     }`} >
                     {existingImages.map((imageUrl, index) => (
                       <div key={`existing-${index}`} className={`relative group ${existingImages.length + previewImages.length > 4 ? 'flex-shrink-0 w-24 h-24' : ''
                         }`}>
                         <div
                           className={`aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-colors ${mainImageIndex === index
-                              ? "border-[#C9A55A] shadow-lg"
-                              : "border-gray-200 hover:border-[#C9A55A]"
+                            ? "border-[#C9A55A] shadow-lg"
+                            : "border-gray-200 hover:border-[#C9A55A]"
                             }`}
                           onClick={() => setMainImageIndex(index)}
                         >
@@ -987,8 +989,8 @@ export default function PropertiesPage() {
                         }`}>
                         <div
                           className={`aspect-square rounded-lg overflow-hidden border-2 border-dashed cursor-pointer transition-colors ${mainImageIndex === existingImages.length + index
-                              ? "border-[#C9A55A] shadow-lg bg-[#C9A55A]/5"
-                              : "border-blue-300 hover:border-[#C9A55A]"
+                            ? "border-[#C9A55A] shadow-lg bg-[#C9A55A]/5"
+                            : "border-blue-300 hover:border-[#C9A55A]"
                             }`}
                           onClick={() => setMainImageIndex(existingImages.length + index)}
                         >

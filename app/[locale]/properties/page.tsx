@@ -182,6 +182,7 @@ function PropertiesContent() {
                         <option value="">{t("all_types")}</option>
                         <option value="apartment">{t("apartment")}</option>
                         <option value="villa">{t("villa")}</option>
+                        <option value="studio">{t("studio")}</option>
                         <option value="riad">{t("riad")}</option>
                         <option value="land">{t("land")}</option>
                         <option value="commercial">{t("commercial")}</option>
@@ -243,6 +244,7 @@ function PropertiesContent() {
                     <option value="">{t("all_types")}</option>
                     <option value="apartment">{t("apartment")}</option>
                     <option value="villa">{t("villa")}</option>
+                    <option value="studio">{t("studio")}</option>
                     <option value="riad">{t("riad")}</option>
                     <option value="land">{t("land")}</option>
                     <option value="commercial">{t("commercial")}</option>

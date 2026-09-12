@@ -307,6 +307,7 @@ export default function EvaluationPage() {
                     >
                       <option value="">{t('select_type')}</option>
                       <option value="apartment">{t('apartment')}</option>
+                      <option value="studio">{t("studio")}</option>
                       <option value="villa">{t('villa')}</option>
                       <option value="land">{t('land')}</option>
                       <option value="commercial">{t('commercial')}</option>

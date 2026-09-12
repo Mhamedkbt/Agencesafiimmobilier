@@ -496,6 +496,7 @@ export default function Home() {
                       <option value="">{t("search_type_placeholder")}</option>
                       <option value="apartment">{t("apartment")}</option>
                       <option value="villa">{t("villa")}</option>
+                      <option value="studio">{t("studio")}</option>
                       <option value="riad">{t("riad")}</option>
                       <option value="land">{t("land")}</option>
                       <option value="commercial">{t("commercial")}</option>
