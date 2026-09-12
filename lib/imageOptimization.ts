@@ -1,23 +1,41 @@
 /**
- * Clean & Crisp Real Estate Image Optimizer
- * Converts images to high-resolution WebP without losing detail.
+ * Utility for intelligent client-side image optimization.
+ * Goal: Smallest practical file size without destroying real estate photo quality.
  */
 
-const MAX_DIMENSION = 1920; // High-definition 1080p/2K resolution
-const WEBP_QUALITY = 0.85;   // 85% keeps architectural details sharp
+// Max dimension for real estate photos to balance detail and size
+const MAX_DIMENSION = 1600;
 
+// Quality boundaries
+const QUALITY_MAX = 0.90;
+const QUALITY_MIN = 0.65;
+const QUALITY_STEP = 0.05;
+
+// If a file hits this size or lower, we stop instantly because it's already perfectly small.
+const TARGET_SMALL_BYTES = 150 * 1024; // 150 KB
+
+// The minimum relative size reduction required to justify dropping the quality further.
+// e.g. 0.10 means the file must get at least 10% smaller at the next quality step to be worth it.
+const MIN_SIZE_REDUCTION_RATIO = 0.10;
+
+/**
+ * Optimizes an image file by resizing it and finding the best WebP compression ratio.
+ * 
+ * @param file The original image file
+ * @returns A Promise that resolves to the optimized File
+ */
 export async function optimizeImage(file: File): Promise<File> {
-  // Skip non-images, SVGs, and GIFs
-  if (!file.type.startsWith("image/") || file.type === "image/svg+xml" || file.type === "image/gif") {
+  // If it's a video or non-image, return as-is
+  if (!file.type.startsWith("image/")) {
     return file;
   }
 
-  // If the file is already small (under 250 KB), don't touch it
-  if (file.size <= 250 * 1024) {
+  // Skip SVGs and GIFs as they might not compress well or lose animation
+  if (file.type === "image/svg+xml" || file.type === "image/gif") {
     return file;
   }
 
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const img = new Image();
     const objectUrl = URL.createObjectURL(file);
 
@@ -26,7 +44,7 @@ export async function optimizeImage(file: File): Promise<File> {
 
       let { width, height } = img;
 
-      // Keep aspect ratio while capping max dimension at 1920px
+      // Calculate new dimensions preserving aspect ratio
       if (width > MAX_DIMENSION || height > MAX_DIMENSION) {
         if (width > height) {
           height = Math.round((height * MAX_DIMENSION) / width);
@@ -41,48 +59,91 @@ export async function optimizeImage(file: File): Promise<File> {
       canvas.width = width;
       canvas.height = height;
 
-      const ctx = canvas.getContext("2d", { alpha: false });
+      const ctx = canvas.getContext("2d");
       if (!ctx) {
+        // Fallback to original file if canvas is not supported
         resolve(file);
         return;
       }
 
-      // Turn on high-quality smoothing to keep edges sharp
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
-
-      // Fill white background for transparent PNGs
+      // Fill with white background in case of transparent PNG to WebP conversion
       ctx.fillStyle = "#FFFFFF";
       ctx.fillRect(0, 0, width, height);
       ctx.drawImage(img, 0, 0, width, height);
 
-      // Export as crisp WebP
-      canvas.toBlob(
-        (blob) => {
-          if (!blob || blob.size >= file.size) {
-            resolve(file);
-            return;
-          }
+      // Recursive function to test quality steps dynamically
+      const attemptCompression = (currentQuality: number, previousBlob: Blob | null) => {
 
-          const fileNameParts = file.name.split(".");
-          if (fileNameParts.length > 1) fileNameParts.pop();
-          const newFileName = `${fileNameParts.join(".")}.webp`;
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) {
+              finishOptimization(previousBlob || file);
+              return;
+            }
 
-          resolve(
-            new File([blob], newFileName, {
-              type: "image/webp",
-              lastModified: Date.now(),
-            })
-          );
-        },
-        "image/webp",
-        WEBP_QUALITY
-      );
+            // If it's our first try and it's already small enough, stop here.
+            if (currentQuality === QUALITY_MAX && blob.size <= TARGET_SMALL_BYTES) {
+              finishOptimization(blob);
+              return;
+            }
+
+            if (previousBlob) {
+              // Calculate how much space we saved by dropping the quality this step
+              const sizeReduction = previousBlob.size - blob.size;
+              const reductionRatio = sizeReduction / previousBlob.size;
+
+              // If the size reduction isn't worth the quality loss, stop and use the PREVIOUS (higher quality) blob
+              if (reductionRatio < MIN_SIZE_REDUCTION_RATIO) {
+                finishOptimization(previousBlob);
+                return;
+              }
+            }
+
+            const nextQuality = currentQuality - QUALITY_STEP;
+
+            // If we've reached our minimum acceptable visual quality floor, stop here.
+            if (nextQuality < QUALITY_MIN) {
+              finishOptimization(blob);
+              return;
+            }
+
+            // Otherwise, keep testing a lower quality
+            attemptCompression(nextQuality, blob);
+          },
+          "image/webp",
+          currentQuality
+        );
+      };
+
+      const finishOptimization = (blob: Blob | File) => {
+        // Ensure we don't accidentally return a larger file than the original
+        if (blob.size >= file.size && file.type === "image/webp") {
+          resolve(file);
+          return;
+        }
+
+        // We replace the original extension with .webp
+        const fileNameParts = file.name.split(".");
+        if (fileNameParts.length > 1) {
+          fileNameParts.pop();
+        }
+        const newFileName = `${fileNameParts.join(".")}.webp`;
+
+        const optimizedFile = new File([blob], newFileName, {
+          type: "image/webp",
+          lastModified: Date.now(),
+        });
+
+        resolve(optimizedFile);
+      };
+
+      // Start the compression testing at our maximum desired quality
+      attemptCompression(QUALITY_MAX, null);
     };
 
     img.onerror = () => {
       URL.revokeObjectURL(objectUrl);
-      resolve(file);
+      reject(new Error("Failed to load image for optimization"));
     };
 
     img.src = objectUrl;
