@@ -1,27 +1,19 @@
 /**
- * Utility for intelligent client-side real estate image optimization.
- * Guarantees crisp visual detail while drastically reducing original file sizes.
+ * Clean & Crisp Real Estate Image Optimizer
+ * Converts images to high-resolution WebP without losing detail.
  */
 
-// Max dimension (1920px is perfect for full-width HD property galleries)
-const MAX_DIMENSION = 1920;
+const MAX_DIMENSION = 1920; // High-definition 1080p/2K resolution
+const WEBP_QUALITY = 0.85;   // 85% keeps architectural details sharp
 
-// High quality threshold for WebP (0.84 keeps architectural textures crisp without artifacts)
-const WEBP_QUALITY = 0.84;
-
-/**
- * Optimizes an image file by scaling to HD dimensions and compressing to WebP.
- * * @param file The original image file
- * @returns A Promise that resolves to the optimized File
- */
 export async function optimizeImage(file: File): Promise<File> {
-  // Return non-image files as-is
-  if (!file.type.startsWith("image/")) {
+  // Skip non-images, SVGs, and GIFs
+  if (!file.type.startsWith("image/") || file.type === "image/svg+xml" || file.type === "image/gif") {
     return file;
   }
 
-  // Skip SVGs and GIFs to prevent losing vector data or animation
-  if (file.type === "image/svg+xml" || file.type === "image/gif") {
+  // If the file is already small (under 250 KB), don't touch it
+  if (file.size <= 250 * 1024) {
     return file;
   }
 
@@ -34,7 +26,7 @@ export async function optimizeImage(file: File): Promise<File> {
 
       let { width, height } = img;
 
-      // Maintain aspect ratio while resizing large photos down to MAX_DIMENSION
+      // Keep aspect ratio while capping max dimension at 1920px
       if (width > MAX_DIMENSION || height > MAX_DIMENSION) {
         if (width > height) {
           height = Math.round((height * MAX_DIMENSION) / width);
@@ -45,53 +37,43 @@ export async function optimizeImage(file: File): Promise<File> {
         }
       }
 
-      // Create main canvas
       const canvas = document.createElement("canvas");
       canvas.width = width;
       canvas.height = height;
 
-      const ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext("2d", { alpha: false });
       if (!ctx) {
         resolve(file);
         return;
       }
 
-      // Configure canvas for high-sharpness rendering
+      // Turn on high-quality smoothing to keep edges sharp
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
 
-      // Fill background white (prevents transparent PNGs turning black in WebP)
+      // Fill white background for transparent PNGs
       ctx.fillStyle = "#FFFFFF";
       ctx.fillRect(0, 0, width, height);
       ctx.drawImage(img, 0, 0, width, height);
 
-      // Convert to WebP blob with fixed high quality
+      // Export as crisp WebP
       canvas.toBlob(
         (blob) => {
-          if (!blob) {
+          if (!blob || blob.size >= file.size) {
             resolve(file);
             return;
           }
 
-          // If compressed size is larger than original file, keep original
-          if (blob.size >= file.size && file.type === "image/webp") {
-            resolve(file);
-            return;
-          }
-
-          // Format new file name with .webp extension
           const fileNameParts = file.name.split(".");
-          if (fileNameParts.length > 1) {
-            fileNameParts.pop();
-          }
+          if (fileNameParts.length > 1) fileNameParts.pop();
           const newFileName = `${fileNameParts.join(".")}.webp`;
 
-          const optimizedFile = new File([blob], newFileName, {
-            type: "image/webp",
-            lastModified: Date.now(),
-          });
-
-          resolve(optimizedFile);
+          resolve(
+            new File([blob], newFileName, {
+              type: "image/webp",
+              lastModified: Date.now(),
+            })
+          );
         },
         "image/webp",
         WEBP_QUALITY
@@ -100,7 +82,7 @@ export async function optimizeImage(file: File): Promise<File> {
 
     img.onerror = () => {
       URL.revokeObjectURL(objectUrl);
-      resolve(file); // Fallback to original file on load error
+      resolve(file);
     };
 
     img.src = objectUrl;

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useParams, useRouter } from 'next/navigation'
 import { FormEvent, useEffect, useState, useRef } from 'react'
 import { supabase } from '@/lib/supabase'
@@ -419,14 +420,13 @@ export default function PropertyPage() {
                       preload="metadata"
                     />
                   ) : (
-                    <img
+                    <Image
                       src={images[activeImage]}
                       alt={`${property.title} photo ${activeImage + 1}`}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      fill
+                      unoptimized // 👈 Keeps WebP crisp and bypasses Next.js re-compression blur
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                       onClick={() => { setLightboxIndex(activeImage); setLightboxOpen(true) }}
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none'
-                      }}
                     />
                   )}
                   {images.length > 1 && (
@@ -484,13 +484,12 @@ export default function PropertyPage() {
                                 </div>
                               </div>
                             ) : (
-                              <img
+                              <Image
                                 src={src}
                                 alt={`${property.title} thumbnail ${index + 1}`}
-                                className="h-full w-full object-cover"
-                                onError={(e) => {
-                                  e.currentTarget.parentElement!.style.display = 'none'
-                                }}
+                                fill
+                                unoptimized
+                                className="object-cover"
                               />
                             )}
                           </button>
