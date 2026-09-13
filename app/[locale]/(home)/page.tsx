@@ -96,7 +96,7 @@ export default function Home() {
   const router = useRouter();
   const locale = useLocale();
   const t = useTranslations("home");
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Casablanca");
   const [type, setType] = useState("");
   const [status, setStatus] = useState("");
   const [featuredProperties, setFeaturedProperties] = useState<Property[]>([]);
