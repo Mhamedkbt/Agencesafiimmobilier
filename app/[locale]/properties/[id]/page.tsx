@@ -234,7 +234,7 @@ export default function PropertyPage() {
       </ul>
 
       <a
-        href={`https://wa.me/212660804633?text=Hello, I'm interested in the property: ${encodeURIComponent(property.title ?? '')} - ${encodeURIComponent(`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://appartsimoweb.vercel.app/'}/${locale}/properties/${property.id}`)}`}
+        href={`https://wa.me/212660804633?text=Hello, I'm interested in the property: ${encodeURIComponent(property.title ?? '')} - ${encodeURIComponent(`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://appartsimo.vercel.app/'}/${locale}/properties/${property.id}`)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#20bd5a]"
