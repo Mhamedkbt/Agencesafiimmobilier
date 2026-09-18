@@ -1,0 +1,17 @@
+Fix mobile responsive layout issues strictly on the Contact page ONLY (app/contact/page.tsx or contact components). Do NOT touch any other pages or files in the project, and do NOT change any copy, colors, or functionality.
+
+CONTACT PAGE BUGS TO FIX (Mobile Viewports):
+1. CONTAINER OVERFLOW:
+   - Fix horizontal overflow on the Contact page wrapper and form containers.
+   - Ensure the outer section container uses `w-full max-w-full px-4 sm:px-6 box-border overflow-x-hidden`.
+
+2. FORM INPUTS & CARDS:
+   - Fix input fields (Name, Phone, Email) and "Send Us a Message" container stretching beyond the right edge of the screen.
+   - Fix "Get in Touch" info cards (Phone, Email, Location) extending off-screen.
+   - Set all input fields, textareas, and card containers to `w-full max-w-full box-border`.
+
+3. BUTTONS LAYOUT:
+   - Fix "Send Message" and "Chat on WhatsApp" buttons extending past the card boundaries.
+   - Ensure buttons use `w-full` inside padded parent elements.
+
+Apply these responsive container fixes strictly to the Contact page files.
