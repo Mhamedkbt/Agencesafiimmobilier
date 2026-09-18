@@ -162,7 +162,7 @@ export default function DashboardPage() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#C9A55A]"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF37]"></div>
           <p className="mt-4 text-gray-600">{t("loading_dashboard")}</p>
         </div>
       </div>
@@ -172,7 +172,7 @@ export default function DashboardPage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#000000] text-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:top-auto top-16 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#121212] text-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:top-auto top-16 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
       >
         <div className="flex flex-col h-full">
@@ -184,7 +184,7 @@ export default function DashboardPage() {
                 onClick={closeSidebar}
                 className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium transition-colors hover:bg-white/10 focus:outline-none focus:bg-white/10"
               >
-                <span className="text-[#C9A55A]">{getIcon(item.icon)}</span>
+                <span className="text-[#D4AF37]">{getIcon(item.icon)}</span>
                 {t(item.labelKey)}
               </Link>
             ))}
@@ -194,7 +194,7 @@ export default function DashboardPage() {
             <button
               onClick={handleLogout}
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#C9A55A] px-4 py-3 text-sm font-semibold text-[#000000] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+              className="w-full flex items-center justify-center gap-2 rounded-lg bg-[#D4AF37] px-4 py-3 text-sm font-semibold text-[#121212] transition-colors hover:bg-[#D4B56A] disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
@@ -216,7 +216,7 @@ export default function DashboardPage() {
         <div className="p-4 sm:p-6 lg:p-8 pt-4 md:pt-0">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="mb-4 inline-flex md:hidden items-center justify-center rounded-lg p-2 text-[#000000] hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#C9A55A]"
+            className="mb-4 inline-flex md:hidden items-center justify-center rounded-lg p-2 text-[#121212] hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
             aria-label="Toggle menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -229,7 +229,7 @@ export default function DashboardPage() {
           </button>
 
           <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#000000]">{t("dashboard_title")}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#121212]">{t("dashboard_title")}</h2>
             <p className="mt-2 text-sm sm:text-base text-gray-600">{t("dashboard_subtitle")}</p>
           </div>
 
@@ -244,7 +244,7 @@ export default function DashboardPage() {
                     <p className="text-xs sm:text-sm font-medium text-gray-600">
                       {t(stat.labelKey)}
                     </p>
-                    <p className="mt-2 text-2xl sm:text-3xl font-bold text-[#C9A55A]">
+                    <p className="mt-2 text-2xl sm:text-3xl font-bold text-[#D4AF37]">
                       {statsLoading ? (
                         <span className="inline-block w-8 h-8 animate-pulse bg-yellow-100 rounded" />
                       ) : (
@@ -252,7 +252,7 @@ export default function DashboardPage() {
                       )}
                     </p>
                   </div>
-                  <div className="text-[#C9A55A]">
+                  <div className="text-[#D4AF37]">
                     {getIcon(stat.icon)}
                   </div>
                 </div>
@@ -261,18 +261,18 @@ export default function DashboardPage() {
           </div>
 
           <div className="mt-8 rounded-xl border border-gray-100 bg-white p-4 sm:p-6 shadow-md">
-            <h3 className="text-lg font-bold text-[#000000]">{t("quick_actions_title")}</h3>
+            <h3 className="text-lg font-bold text-[#121212]">{t("quick_actions_title")}</h3>
             <div className="mt-4 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
-              <Link href={`/${locale}/admin/properties`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
+              <Link href={`/${locale}/admin/properties`} className="rounded-lg border border-[#D4AF37]/30 bg-[#D4AF37]/5 px-4 py-3 text-center font-medium text-[#121212] transition-colors hover:bg-[#D4AF37]/10">
                 {t("manage_properties")}
               </Link>
-              <Link href={`/${locale}/admin/messages`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
+              <Link href={`/${locale}/admin/messages`} className="rounded-lg border border-[#D4AF37]/30 bg-[#D4AF37]/5 px-4 py-3 text-center font-medium text-[#121212] transition-colors hover:bg-[#D4AF37]/10">
                 {t("view_messages")}
               </Link>
-              {/* <Link href={`/${locale}/admin/evaluations`} className="rounded-lg border border-[#C9A55A]/30 bg-[#C9A55A]/5 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-[#C9A55A]/10">
+              {/* <Link href={`/${locale}/admin/evaluations`} className="rounded-lg border border-[#D4AF37]/30 bg-[#D4AF37]/5 px-4 py-3 text-center font-medium text-[#121212] transition-colors hover:bg-[#D4AF37]/10">
                 {t("review_evaluations")}
               </Link> */}
-              <Link href={`/${locale}`} className="rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-center font-medium text-[#000000] transition-colors hover:bg-gray-100">
+              <Link href={`/${locale}`} className="rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-center font-medium text-[#121212] transition-colors hover:bg-gray-100">
                 {t("back_to_site")}
               </Link>
             </div>

@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className={`sticky top-0 z-50 bg-[#000000] transition-shadow duration-300 ${scrolled ? "shadow-lg shadow-black/25" : "shadow-md"
+      className={`sticky top-0 z-50 bg-[#121212] transition-shadow duration-300 ${scrolled ? "shadow-lg shadow-black/25" : "shadow-md"
         }`}
     >
       <nav className="mx-auto flex h-22 max-w-7xl items-center justify-between px-4 py-[2px] sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ export default function Navbar() {
           className="flex items-center"
           onClick={() => setMenuOpen(false)}
         >
-          <img src="/images/logoImg.png" className="h-22 w-auto" alt="Appartsimo" />
+          <img src="/images/logoImgFr.png" className="h-22 w-auto" alt="Agencesafiimmobilier" />
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -62,7 +62,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-white transition-colors hover:text-[#C9A55A] lg:text-base"
+                className="text-sm font-medium text-white transition-colors hover:text-[#D4AF37] lg:text-base"
               >
                 {link.label}
               </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <Link
             href={`/${locale}/admin`}
-            className="text-white transition-colors hover:text-[#C9A55A]"
+            className="text-white transition-colors hover:text-[#D4AF37]"
             aria-label="Admin Login"
           >
             <svg
@@ -90,17 +90,17 @@ export default function Navbar() {
           <LanguageSwitcher />
 
           <a
-            href="tel:+212660804633"
-            className="rounded-md bg-[#C9A55A] px-5 py-2.5 text-sm font-semibold text-[#1a1a1a] transition-colors hover:bg-[#D4B56A] lg:text-base"
+            href="tel:+212600716145"
+            className="rounded-md bg-[#D4AF37] px-5 py-2.5 text-sm font-semibold text-[#1a1a1a] transition-colors hover:bg-[#D4B56A] lg:text-base"
           >
-            +212 660-804633
+            +212 600-716145
           </a>
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
           <Link
             href={`/${locale}/admin`}
-            className="p-2 text-white transition-colors hover:text-[#C9A55A]"
+            className="p-2 text-white transition-colors hover:text-[#D4AF37]"
             aria-label="Admin Login"
             onClick={() => setMenuOpen(false)}
           >
@@ -117,7 +117,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-white hover:text-[#C9A55A]"
+            className="inline-flex items-center justify-center rounded-md p-2 text-white hover:text-[#D4AF37]"
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((open) => !open)}
@@ -149,13 +149,13 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-white/10 bg-[#000000] md:hidden">
+        <div className="border-t border-white/10 bg-[#121212] md:hidden">
           <ul className="flex flex-col px-4 py-4 sm:px-6">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block py-3 text-base font-medium text-white transition-colors hover:text-[#C9A55A]"
+                  className="block py-3 text-base font-medium text-white transition-colors hover:text-[#D4AF37]"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
@@ -164,10 +164,10 @@ export default function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href="tel:+212660804633"
-                className="block rounded-md bg-[#C9A55A] px-4 py-3 text-center text-base font-semibold text-[#1a1a1a] transition-colors hover:bg-[#D4B56A]"
+                href="tel:+212600716145"
+                className="block rounded-md bg-[#D4AF37] px-4 py-3 text-center text-base font-semibold text-[#1a1a1a] transition-colors hover:bg-[#D4B56A]"
               >
-                +212 660-804633
+                +212 600-716145
               </a>
             </li>
             <li className="pt-4 mt-4 border-t border-white/10">

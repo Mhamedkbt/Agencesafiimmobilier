@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://appartsimo.vercel.app/sitemap.xml
+Sitemap: https://Agencesafiimmobilier.vercel.app/sitemap.xml
 
 Disallow: /admin/
 Disallow: /api/

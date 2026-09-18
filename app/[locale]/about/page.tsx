@@ -113,11 +113,11 @@ const CounterItem = ({ item }: { item: HighlightItem }) => {
   }, [item.value])
 
   return (
-    <div className="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A55A]/30 hover:shadow-md">
-      <p ref={elementRef} className="text-3xl font-bold tabular-nums text-[#C9A55A] sm:text-4xl">
+    <div className="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/30 hover:shadow-md">
+      <p ref={elementRef} className="text-3xl font-bold tabular-nums text-[#D4AF37] sm:text-4xl">
         {count}
       </p>
-      <p className="mt-2 text-sm font-semibold text-[#000000] sm:text-base">
+      <p className="mt-2 text-sm font-semibold text-[#121212] sm:text-base">
         {item.label}
       </p>
     </div>
@@ -182,11 +182,11 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#000000] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#000000]/60 via-transparent to-[#C9A55A]/10" />
-        <div className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#C9A55A]/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-[#121212] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#121212]/60 via-transparent to-[#D4AF37]/10" />
+        <div className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#D4AF37]/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl text-center">
-          <div className="mx-auto mb-5 h-1 w-16 rounded-full bg-[#C9A55A]" />
+          <div className="mx-auto mb-5 h-1 w-16 rounded-full bg-[#D4AF37]" />
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {t('title')}
           </h1>
@@ -200,21 +200,21 @@ export default function AboutPage() {
       <section className="bg-white px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="text-2xl font-bold text-[#000000] sm:text-3xl">
+            <h2 className="text-2xl font-bold text-[#121212] sm:text-3xl">
               {t('story_title')}
             </h2>
-            <div className="mt-2 h-1 w-16 rounded-full bg-[#C9A55A]" />
+            <div className="mt-2 h-1 w-16 rounded-full bg-[#D4AF37]" />
             <p className="mt-6 leading-relaxed text-gray-600">
               {t('story_p1')}
             </p>
             <p className="mt-4 leading-relaxed text-gray-600">
-              <span className="font-semibold text-[#000000]">{t('mission_label')}</span>{' '}
+              <span className="font-semibold text-[#121212]">{t('mission_label')}</span>{' '}
               {t('mission_text')}{' '}
-              <span className="font-semibold text-[#000000]">{t('vision_label')}</span>{' '}
+              <span className="font-semibold text-[#121212]">{t('vision_label')}</span>{' '}
               {t('vision_text')}
             </p>
           </div>
-          <div className="group relative aspect-4/3 overflow-hidden rounded-2xl shadow-xl ring-1 ring-[#C9A55A]/20">
+          <div className="group relative aspect-4/3 overflow-hidden rounded-2xl shadow-xl ring-1 ring-[#D4AF37]/20">
             <Image
               src="/images/modern-luxury-villa-pool-medulin.jpg"
               alt="Luxury villa with pool in Morocco"
@@ -222,7 +222,7 @@ export default function AboutPage() {
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#000000]/30 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#121212]/30 to-transparent" />
           </div>
         </div>
       </section>
@@ -233,31 +233,31 @@ export default function AboutPage() {
 
       {/* Services Section */}
       <section className="relative overflow-hidden bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#C9A55A]/5 blur-3xl" />
-        <div className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-[#000000]/5 blur-3xl" />
+        <div className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#D4AF37]/5 blur-3xl" />
+        <div className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-[#121212]/5 blur-3xl" />
         <div className="relative mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-[#000000] sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-[#121212] sm:text-4xl">
               {tHome('services_title')}
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-600">
               {tHome('services_subtitle')}
             </p>
-            <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#C9A55A]" />
+            <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#D4AF37]" />
           </div>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {serviceKeys.map((service, index) => (
               <div
                 key={service.titleKey}
-                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#C9A55A]/40 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)]"
+                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37]/40 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)]"
               >
-                <span className="pointer-events-none absolute -right-2 -top-4 text-7xl font-black leading-none text-[#000000]/[0.04] select-none">
+                <span className="pointer-events-none absolute -right-2 -top-4 text-7xl font-black leading-none text-[#121212]/[0.04] select-none">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <div className="relative mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#000000] text-white ring-1 ring-[#C9A55A]/20 transition-colors duration-300 group-hover:bg-[#000000] group-hover:text-white">
+                <div className="relative mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#121212] text-white ring-1 ring-[#D4AF37]/20 transition-colors duration-300 group-hover:bg-[#121212] group-hover:text-white">
                   <ServiceIcon type={service.icon} />
                 </div>
-                <h3 className="relative text-xl font-bold text-[#000000]">{tHome(service.titleKey)}</h3>
+                <h3 className="relative text-xl font-bold text-[#121212]">{tHome(service.titleKey)}</h3>
                 <p className="relative mt-2 text-sm leading-relaxed text-gray-600">
                   {tHome(service.descKey)}
                 </p>
@@ -273,20 +273,20 @@ export default function AboutPage() {
 
 
       {/* Values */}
-      <section className="relative overflow-hidden bg-[#000000] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#000000]/40 to-transparent" />
+      <section className="relative overflow-hidden bg-[#121212] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#121212]/40 to-transparent" />
         <div className="relative mx-auto max-w-7xl">
           <h2 className="text-center text-2xl font-bold text-white sm:text-3xl">
             {t('values_title')}
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#C9A55A]" />
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#D4AF37]" />
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {values.map((value) => (
               <div
                 key={value.title}
-                className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#C9A55A]/30 hover:bg-white/10"
+                className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#D4AF37]/30 hover:bg-white/10"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#000000] text-[#C9A55A] ring-2 ring-[#C9A55A]/40">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#121212] text-[#D4AF37] ring-2 ring-[#D4AF37]/40">
                   {value.icon}
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-white">
@@ -304,10 +304,10 @@ export default function AboutPage() {
       {/* Why Choose Us */}
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-center text-2xl font-bold text-[#000000] sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-[#121212] sm:text-3xl">
             {t('why_title')}
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#C9A55A]" />
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#D4AF37]" />
           <div className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
             {highlights.map((item) => (
               <CounterItem key={item.label} item={item} />

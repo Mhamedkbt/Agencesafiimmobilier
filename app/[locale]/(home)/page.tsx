@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { TestimonialsSlider } from "@/components/TestimonialsSlider";
 import { useTranslations, useLocale } from "next-intl";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://appartsimo.vercel.app/";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://Agencesafiimmobilier.vercel.app/";
 
 export const dynamic = "force-dynamic";
 
@@ -96,7 +96,7 @@ export default function Home() {
   const router = useRouter();
   const locale = useLocale();
   const t = useTranslations("home");
-  const [city, setCity] = useState("Casablanca");
+  const [city, setCity] = useState("Safi");
   const [type, setType] = useState("");
   const [status, setStatus] = useState("");
   const [featuredProperties, setFeaturedProperties] = useState<Property[]>([]);
@@ -268,20 +268,20 @@ export default function Home() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'RealEstateAgent',
-            name: 'Appartsimo',
+            name: 'Agencesafiimmobilier',
             description: 'Luxury Real Estate in Morocco',
             url: siteUrl,
-            logo: `${siteUrl}/images/logoImg.png`,
-            image: `${siteUrl}/images/logoImg.png`,
-            telephone: '+212660804633',
-            email: 'luxurioussuiteshotel@gmail.com',
+            logo: `${siteUrl}/images/logoImgFr.png`,
+            image: `${siteUrl}/images/logoImgFr.png`,
+            telephone: '+212600716145',
+            email: 'Agencesafiimmobilier@gmail.com',
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'Casablanca',
+              addressLocality: 'Safi',
               addressCountry: 'MA',
             },
             areaServed: [
-              'Casablanca',
+              'Safi',
             ],
             sameAs: [],
             openingHours: 'Mo-Sa 09:00-18:00',
@@ -290,15 +290,15 @@ export default function Home() {
       />
       {/* Perfect Full Screen Entry Spinner */}
       {pageLoading && (
-        <div className="fixed inset-0 z-[9999] flex h-[100dvh] w-full touch-none overscroll-none flex-col items-center justify-center bg-[#000000] transition-all duration-500">
+        <div className="fixed inset-0 z-[9999] flex h-[100dvh] w-full touch-none overscroll-none flex-col items-center justify-center bg-[#121212] transition-all duration-500">
           <div className="relative flex h-20 w-20 items-center justify-center">
             {/* Inner dynamic ring */}
-            <div className="absolute h-full w-full rounded-full border-4 border-[#C9A55A]/10"></div>
-            <div className="absolute h-full w-full rounded-full border-4 border-t-[#C9A55A] border-r-transparent border-b-transparent border-l-transparent animate-spin duration-700"></div>
+            <div className="absolute h-full w-full rounded-full border-4 border-[#D4AF37]/10"></div>
+            <div className="absolute h-full w-full rounded-full border-4 border-t-[#D4AF37] border-r-transparent border-b-transparent border-l-transparent animate-spin duration-700"></div>
             {/* Secondary reverse counter pulse inner core ring */}
             <div className="absolute h-12 w-12 rounded-full border-[3px] border-b-[white] border-t-transparent border-r-transparent border-l-transparent animate-[spin_1s_linear_infinite_reverse] opacity-40"></div>
           </div>
-          <p className="mt-6 text-sm font-semibold tracking-widest text-[#C9A55A] uppercase animate-pulse">
+          <p className="mt-6 text-sm font-semibold tracking-widest text-[#D4AF37] uppercase animate-pulse">
             {t("loading_brand")}
           </p>
         </div>
@@ -309,7 +309,7 @@ export default function Home() {
           {/* Dynamic Animated Hero Section */}
           <section
             ref={heroRef}
-            className="relative flex min-h-[90vh] items-center justify-center bg-[#00000025] px-4 py-20 sm:px-6 lg:px-8 overflow-hidden"
+            className="relative flex min-h-[90vh] items-center justify-center bg-[#12121225] px-4 py-20 sm:px-6 lg:px-8 overflow-hidden"
           >
             <div className="absolute inset-0 z-0 overflow-hidden">
               <div
@@ -331,7 +331,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/80 via-[#000000]/65 to-[#000000]/85 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#121212]/80 via-[#121212]/65 to-[#121212]/85 mix-blend-multiply" />
               <div
                 className="pointer-events-none absolute inset-0 opacity-30 animate-[heroShimmer_8s_ease-in-out_infinite]"
                 style={{
@@ -340,11 +340,11 @@ export default function Home() {
                   backgroundSize: "200% 100%",
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#000000]/40" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#121212]/40" />
 
               {/* Floating gold ambient orbs */}
-              <div className="pointer-events-none absolute -left-16 top-1/4 h-64 w-64 rounded-full bg-[#C9A55A]/10 blur-3xl animate-[heroOrbFloat_12s_ease-in-out_infinite]" />
-              <div className="pointer-events-none absolute -right-10 bottom-1/4 h-48 w-48 rounded-full bg-[#C9A55A]/15 blur-3xl animate-[heroOrbFloat_10s_ease-in-out_2s_infinite]" />
+              <div className="pointer-events-none absolute -left-16 top-1/4 h-64 w-64 rounded-full bg-[#D4AF37]/10 blur-3xl animate-[heroOrbFloat_12s_ease-in-out_infinite]" />
+              <div className="pointer-events-none absolute -right-10 bottom-1/4 h-48 w-48 rounded-full bg-[#D4AF37]/15 blur-3xl animate-[heroOrbFloat_10s_ease-in-out_2s_infinite]" />
               <div className="pointer-events-none absolute left-1/2 top-10 h-32 w-32 -translate-x-1/2 rounded-full bg-white/5 blur-2xl animate-[heroOrbPulse_6s_ease-in-out_infinite]" />
             </div>
 
@@ -420,17 +420,17 @@ export default function Home() {
                   }`}
               >
                 <span
-                  className={`h-px w-12 origin-right bg-gradient-to-r from-transparent to-[#C9A55A] ${heroReady ? "animate-[heroLineExpand_0.45s_ease-out_forwards]" : "scale-x-0 opacity-0"
+                  className={`h-px w-12 origin-right bg-gradient-to-r from-transparent to-[#D4AF37] ${heroReady ? "animate-[heroLineExpand_0.45s_ease-out_forwards]" : "scale-x-0 opacity-0"
                     }`}
                 />
                 <span
-                  className={`text-xs font-semibold uppercase tracking-[0.35em] text-[#C9A55A] ${heroReady ? "animate-[heroSubtitleIn_0.45s_ease-out_0.05s_forwards] opacity-0" : "opacity-0"
+                  className={`text-xs font-semibold uppercase tracking-[0.35em] text-[#D4AF37] ${heroReady ? "animate-[heroSubtitleIn_0.45s_ease-out_0.05s_forwards] opacity-0" : "opacity-0"
                     }`}
                 >
                   {t("loading_brand")}
                 </span>
                 <span
-                  className={`h-px w-12 origin-left bg-gradient-to-l from-transparent to-[#C9A55A] ${heroReady ? "animate-[heroLineExpand_0.45s_ease-out_forwards]" : "scale-x-0 opacity-0"
+                  className={`h-px w-12 origin-left bg-gradient-to-l from-transparent to-[#D4AF37] ${heroReady ? "animate-[heroLineExpand_0.45s_ease-out_forwards]" : "scale-x-0 opacity-0"
                     }`}
                 />
               </div>
@@ -470,7 +470,7 @@ export default function Home() {
               >
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-2">
                   <div className="text-left px-2">
-                    <label htmlFor="city" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-[#000000]">
+                    <label htmlFor="city" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-[#121212]">
                       {t("search_city_label")}
                     </label>
                     <input
@@ -479,19 +479,19 @@ export default function Home() {
                       placeholder={t("search_city_placeholder")}
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-[#000000] transition-all placeholder:text-gray-400 focus:border-[#C9A55A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                      className="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-[#121212] transition-all placeholder:text-gray-400 focus:border-[#D4AF37] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30"
                     />
                   </div>
 
                   <div className="text-left px-2">
-                    <label htmlFor="type" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-[#000000]">
+                    <label htmlFor="type" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-[#121212]">
                       {t("search_type_label")}
                     </label>
                     <select
                       id="type"
                       value={type}
                       onChange={(e) => setType(e.target.value)}
-                      className="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-[#000000] transition-all focus:border-[#C9A55A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                      className="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-[#121212] transition-all focus:border-[#D4AF37] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30"
                     >
                       <option value="">{t("search_type_placeholder")}</option>
                       <option value="apartment">{t("apartment")}</option>
@@ -504,14 +504,14 @@ export default function Home() {
                   </div>
 
                   <div className="text-left px-2">
-                    <label htmlFor="status" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-[#000000]">
+                    <label htmlFor="status" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-[#121212]">
                       {t("search_status_label")}
                     </label>
                     <select
                       id="status"
                       value={status}
                       onChange={(e) => setStatus(e.target.value)}
-                      className="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-[#000000] transition-all focus:border-[#C9A55A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#C9A55A]/30"
+                      className="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-[#121212] transition-all focus:border-[#D4AF37] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30"
                     >
                       <option value="">{t("search_status_placeholder")}</option>
                       <option value="sale">{t("sale")}</option>
@@ -522,7 +522,7 @@ export default function Home() {
                   <div className="flex items-end px-2 pt-2 sm:pt-0">
                     <button
                       type="submit"
-                      className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#C9A55A] px-6 py-3 text-base font-bold text-[#000000] shadow-md transition-all hover:bg-[#D4B56A] hover:shadow-lg active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#C9A55A] focus:ring-offset-2"
+                      className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#D4AF37] px-6 py-3 text-base font-bold text-[#121212] shadow-md transition-all hover:bg-[#D4B56A] hover:shadow-lg active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -542,7 +542,7 @@ export default function Home() {
               aria-hidden
             >
               <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/50">Scroll</span>
-              <svg className="h-5 w-5 text-[#C9A55A]/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-5 w-5 text-[#D4AF37]/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </div>
@@ -552,7 +552,7 @@ export default function Home() {
           <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="text-center">
-                <h2 className="text-3xl font-bold text-[#000000] sm:text-4xl">
+                <h2 className="text-3xl font-bold text-[#121212] sm:text-4xl">
                   {t("featured_title")}
                 </h2>
                 <p className="mt-3 text-lg text-gray-500">
@@ -563,8 +563,8 @@ export default function Home() {
               {loadingProperties && (
                 <div className="mt-16 flex flex-col items-center justify-center gap-12">
                   <div className="relative flex h-14 w-14 items-center justify-center">
-                    <div className="absolute h-full w-full rounded-full border-4 border-[#000000]/10"></div>
-                    <div className="absolute h-full w-full rounded-full border-4 border-t-[#C9A55A] border-r-transparent border-b-transparent border-l-transparent animate-spin"></div>
+                    <div className="absolute h-full w-full rounded-full border-4 border-[#121212]/10"></div>
+                    <div className="absolute h-full w-full rounded-full border-4 border-t-[#D4AF37] border-r-transparent border-b-transparent border-l-transparent animate-spin"></div>
                   </div>
                   <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {[1, 2, 3].map((i) => (
@@ -595,7 +595,7 @@ export default function Home() {
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     </svg>
                   </div>
-                  <p className="text-xl font-semibold text-[#000000]">{t("featured_empty")}</p>
+                  <p className="text-xl font-semibold text-[#121212]">{t("featured_empty")}</p>
                   <p className="mt-2 text-gray-500">{t("featured_empty_sub")}</p>
                 </div>
               )}
@@ -636,7 +636,7 @@ export default function Home() {
                             />
                           )
                         ) : (
-                          <div className="h-full w-full bg-gradient-to-br from-[#000000] to-[#000000] flex items-center justify-center">
+                          <div className="h-full w-full bg-gradient-to-br from-[#121212] to-[#121212] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
@@ -645,12 +645,12 @@ export default function Home() {
 
                         <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
                           {property.type && (
-                            <span className="rounded-lg bg-[#000000] px-3 py-1.5 text-xs font-medium text-white capitalize shadow-sm backdrop-blur-xs">
+                            <span className="rounded-lg bg-[#121212] px-3 py-1.5 text-xs font-medium text-white capitalize shadow-sm backdrop-blur-xs">
                               {property.type}
                             </span>
                           )}
                           {property.status && (
-                            <span className="rounded-lg border border-[#000000]/20 bg-white px-3 py-1.5 text-xs font-medium text-[#000000] capitalize shadow-sm">
+                            <span className="rounded-lg border border-[#121212]/20 bg-white px-3 py-1.5 text-xs font-medium text-[#121212] capitalize shadow-sm">
                               {property.status}
                             </span>
                           )}
@@ -659,7 +659,7 @@ export default function Home() {
 
                       <div className="flex flex-1 flex-col p-6">
                         <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-[#000000] tracking-tight line-clamp-1 group-hover:text-[#C9A55A] transition-colors duration-200">
+                          <h3 className="text-xl font-semibold text-[#121212] tracking-tight line-clamp-1 group-hover:text-[#D4AF37] transition-colors duration-200">
                             {property.title ?? "Untitled Property"}
                           </h3>
                           <p className="mt-1.5 text-sm text-gray-400 font-light tracking-wide flex items-center gap-1.5">
@@ -672,7 +672,7 @@ export default function Home() {
                         </div>
 
                         <div className="mt-3 pt-4 border-t border-gray-50 flex items-center justify-between">
-                          <p className="text-lg font-bold text-[#000000] tracking-tight">
+                          <p className="text-lg font-bold text-[#121212] tracking-tight">
                             {property.price
                               ? `${property.price.toLocaleString()} MAD`
                               : t("price_on_request")}
@@ -684,8 +684,8 @@ export default function Home() {
 
                         <Link
                           href={`/${locale}/properties/${property.id}`}
-                          className="mt-5 block w-full rounded-xl bg-[#C9A55A] py-3.5 text-center 
-                                 text-sm font-semibold text-[#000000] transition-all duration-200 
+                          className="mt-5 block w-full rounded-xl bg-[#D4AF37] py-3.5 text-center 
+                                 text-sm font-semibold text-[#121212] transition-all duration-200 
                                  hover:bg-[#D4B56A] shadow-xs hover:shadow-sm"
                         >
                           {t("view_details")}
@@ -700,9 +700,9 @@ export default function Home() {
                 <div className="mt-14 text-center">
                   <Link
                     href={`/${locale}/properties`}
-                    className="inline-block rounded-xl border-2 border-[#000000] px-10 py-3.5 
-                           font-semibold text-[#000000] transition-all duration-200 
-                           hover:bg-[#000000] hover:text-white"
+                    className="inline-block rounded-xl border-2 border-[#121212] px-10 py-3.5 
+                           font-semibold text-[#121212] transition-all duration-200 
+                           hover:bg-[#121212] hover:text-white"
                   >
                     {t("view_all")}
                   </Link>
@@ -712,11 +712,11 @@ export default function Home() {
           </section>
 
           {/* Stats Counter Section */}
-          <section ref={statsRef} className="bg-[#000000] px-4 py-20 sm:px-6 lg:px-8">
+          <section ref={statsRef} className="bg-[#121212] px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-10 gap-x-4 lg:grid-cols-4">
               {statsData.map((stat, idx) => (
                 <div key={stat.labelKey} className="text-center border-r last:border-0 border-white/10 px-2">
-                  <p className="text-4xl font-extrabold text-[#C9A55A] sm:text-5xl tabular-nums tracking-tight">
+                  <p className="text-4xl font-extrabold text-[#D4AF37] sm:text-5xl tabular-nums tracking-tight">
                     {counts[idx]}{stat.suffix}
                   </p>
                   <p className="mt-2 text-sm font-medium tracking-wide text-white/90 sm:text-base">
@@ -731,7 +731,7 @@ export default function Home() {
           <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-[#000000] sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-[#121212] sm:text-4xl">
                   {t("about_title")}
                 </h2>
                 <p className="mt-6 leading-relaxed text-gray-600 font-light">
@@ -739,7 +739,7 @@ export default function Home() {
                 </p>
                 <Link
                   href={`/${locale}/contact`}
-                  className="mt-8 inline-block rounded-xl bg-[#C9A55A] px-8 py-3.5 font-bold text-[#000000] shadow-sm transition-all hover:bg-[#D4B56A] hover:shadow"
+                  className="mt-8 inline-block rounded-xl bg-[#D4AF37] px-8 py-3.5 font-bold text-[#121212] shadow-sm transition-all hover:bg-[#D4B56A] hover:shadow"
                 >
                   {t("contact_us")}
                 </Link>
@@ -752,38 +752,38 @@ export default function Home() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/20 to-transparent pointer-events-none" />
               </div>
             </div>
           </section>
 
           {/* Services Section */}
           <section className="relative overflow-hidden bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
-            <div className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#C9A55A]/5 blur-3xl" />
-            <div className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-[#000000]/5 blur-3xl" />
+            <div className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#D4AF37]/5 blur-3xl" />
+            <div className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-[#121212]/5 blur-3xl" />
             <div className="relative mx-auto max-w-7xl">
               <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-[#000000] sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-[#121212] sm:text-4xl">
                   {t("services_title")}
                 </h2>
                 <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-600">
                   {t("services_subtitle")}
                 </p>
-                <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#C9A55A]" />
+                <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#D4AF37]" />
               </div>
               <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {serviceKeys.map((service, index) => (
                   <div
                     key={service.titleKey}
-                    className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#C9A55A]/40 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)]"
+                    className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37]/40 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)]"
                   >
-                    <span className="pointer-events-none absolute -right-2 -top-4 text-7xl font-black leading-none text-[#000000]/[0.04] select-none">
+                    <span className="pointer-events-none absolute -right-2 -top-4 text-7xl font-black leading-none text-[#121212]/[0.04] select-none">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <div className="relative mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#000000] text-white ring-1 ring-[#C9A55A]/20 transition-colors duration-300 group-hover:bg-[#000000] group-hover:text-white">
+                    <div className="relative mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#121212] text-white ring-1 ring-[#D4AF37]/20 transition-colors duration-300 group-hover:bg-[#121212] group-hover:text-white">
                       <ServiceIcon type={service.icon} />
                     </div>
-                    <h3 className="relative text-xl font-bold text-[#000000]">{t(service.titleKey)}</h3>
+                    <h3 className="relative text-xl font-bold text-[#121212]">{t(service.titleKey)}</h3>
                     <p className="relative mt-2 text-sm leading-relaxed text-gray-600">
                       {t(service.descKey)}
                     </p>

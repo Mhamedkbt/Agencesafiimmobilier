@@ -13,14 +13,14 @@ const languages = [
     short: 'EN',
     flag: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" className="h-4 w-6 rounded-sm overflow-hidden flex-shrink-0">
-        <clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath>
-        <clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
+        <clipPath id="a"><path d="M0 0v30h60V0z" /></clipPath>
+        <clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z" /></clipPath>
         <g clipPath="url(#a)">
-          <path d="M0 0v30h60V0z" fill="#012169"/>
-          <path d="M0 0l60 30m0-30L0 30" stroke="#fff" strokeWidth="6"/>
-          <path d="M0 0l60 30m0-30L0 30" clipPath="url(#b)" stroke="#C8102E" strokeWidth="4"/>
-          <path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10"/>
-          <path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6"/>
+          <path d="M0 0v30h60V0z" fill="#012169" />
+          <path d="M0 0l60 30m0-30L0 30" stroke="#fff" strokeWidth="6" />
+          <path d="M0 0l60 30m0-30L0 30" clipPath="url(#b)" stroke="#C8102E" strokeWidth="4" />
+          <path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10" />
+          <path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6" />
         </g>
       </svg>
     ),
@@ -32,23 +32,23 @@ const languages = [
     short: 'FR',
     flag: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="h-4 w-6 rounded-sm overflow-hidden flex-shrink-0">
-        <rect width="1" height="2" fill="#002395"/>
-        <rect x="1" width="1" height="2" fill="#FFFFFF"/>
-        <rect x="2" width="1" height="2" fill="#ED2939"/>
+        <rect width="1" height="2" fill="#002395" />
+        <rect x="1" width="1" height="2" fill="#FFFFFF" />
+        <rect x="2" width="1" height="2" fill="#ED2939" />
       </svg>
     ),
   },
- 
+
   {
     code: 'ar',
     label: 'العربية',
     short: 'ع',
     flag: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" className="h-4 w-6 rounded-sm overflow-hidden flex-shrink-0">
-        <rect width="900" height="600" fill="#c1272d"/>
-        <path 
+        <rect width="900" height="600" fill="#c1272d" />
+        <path
           d="M450,162 L484,267 L573,199 L539,304 L628,372 L518,372 L450,478 L382,372 L272,372 L361,304 L327,199 L416,267 Z 
-             M450,225 L427,294 L362,247 L387,323 L322,372 L402,372 L450,447 L498,372 L578,372 L513,323 L538,247 L473,294 Z" 
+             M450,225 L427,294 L362,247 L387,323 L322,372 L402,372 L450,447 L498,372 L578,372 L513,323 L538,247 L473,294 Z"
           fill="#006233"
         />
       </svg>
@@ -126,7 +126,7 @@ export default function LanguageSwitcher() {
         className="flex items-center gap-2 rounded-lg border border-white/20 
                    bg-white/10 px-3 py-2 text-white backdrop-blur-sm 
                    transition-all duration-200 hover:bg-white/20 
-                   hover:border-[#C9A55A]/50 min-w-[80px]"
+                   hover:border-[#D4AF37]/50 min-w-[80px]"
       >
         {current.flag}
         <span className="text-xs font-bold tracking-wider">{current.short}</span>
@@ -137,7 +137,7 @@ export default function LanguageSwitcher() {
           fill="none" viewBox="0 0 24 24" stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round"
-                strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+            strokeWidth={2.5} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
 
@@ -158,18 +158,18 @@ export default function LanguageSwitcher() {
               className={`flex w-full items-center gap-3 px-4 py-3 
                           text-left text-sm transition-colors duration-150
                           ${locale === lang.code
-                            ? 'bg-[#C9A55A]/10 font-bold text-[#C9A55A]'
-                            : 'font-medium text-gray-700 hover:bg-gray-50'
-                          }`}
+                  ? 'bg-[#D4AF37]/10 font-bold text-[#D4AF37]'
+                  : 'font-medium text-gray-700 hover:bg-gray-50'
+                }`}
             >
               {lang.flag}
               <span className="flex-1">{lang.label}</span>
               {locale === lang.code && (
                 <svg xmlns="http://www.w3.org/2000/svg"
-                     className="h-4 w-4 flex-shrink-0 text-[#C9A55A]"
-                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  className="h-4 w-4 flex-shrink-0 text-[#D4AF37]"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round"
-                        strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
               )}
             </button>

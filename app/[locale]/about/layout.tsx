@@ -10,14 +10,14 @@ export async function generateMetadata({
   const { locale } = await params
   const siteUrl = getSiteUrl()
   const titles: Record<string, string> = {
-    fr: 'À Propos — Appartsimo',
-    en: 'About — Appartsimo',
-    ar: 'عن Appartsimo',
-    es: 'Sobre Nosotros — Appartsimo',
+    fr: 'À Propos — Agencesafiimmobilier',
+    en: 'About — Agencesafiimmobilier',
+    ar: 'عن Agencesafiimmobilier',
+    es: 'Sobre Nosotros — Agencesafiimmobilier',
   }
   return {
     title: titles[locale] ?? titles.fr,
-    description: 'Découvrez Appartsimo, votre agence immobilière de luxe au Maroc.',
+    description: 'Découvrez Agencesafiimmobilier, votre agence immobilière de luxe au Maroc.',
     alternates: {
       canonical: `${siteUrl}/${locale}/about`,
     },
