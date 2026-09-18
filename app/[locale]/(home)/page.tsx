@@ -274,7 +274,7 @@ export default function Home() {
             logo: `${siteUrl}/images/logoImgFr.png`,
             image: `${siteUrl}/images/logoImgFr.png`,
             telephone: '+212600716145',
-            email: 'Agencesafiimmobilier@gmail.com',
+            email: 'safiimmobilier@gmail.com',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'Safi',

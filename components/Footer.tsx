@@ -118,7 +118,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:Agencesafiimmobilier@gmail.com"
+                  href="mailto:safiimmobilier@gmail.com"
                   className="transition-colors hover:text-[#D4AF37]"
                 >
                   {t("email")}

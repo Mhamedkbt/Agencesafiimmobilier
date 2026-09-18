@@ -38,7 +38,7 @@ export default function ContactPage() {
         </svg>
       ),
       label: t('email'),
-      links: [{ text: tFooter('email'), href: 'mailto:Agencesafiimmobilier@gmail.com' }],
+      links: [{ text: tFooter('email'), href: 'mailto:gmail@gmail.com' }],
     },
     {
       icon: (
@@ -93,8 +93,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="w-full max-w-full bg-white px-4 py-12 sm:px-6 lg:px-8 lg:py-16 box-border overflow-x-hidden">
-        <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-2 lg:gap-16">
+      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="text-2xl font-bold text-[#121212] sm:text-3xl">
               {t('send_message')}
@@ -123,19 +123,19 @@ export default function ContactPage() {
                 )}
                 <div>
                   <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-[#121212]">{t('name')}</label>
-                  <input id="name" type="text" required placeholder={t('name_placeholder')} value={name} onChange={(e) => setName(e.target.value)} className="w-full max-w-full box-border rounded-lg border border-gray-200 px-4 py-3 text-[#121212] placeholder:text-gray-400 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30" />
+                  <input id="name" type="text" required placeholder={t('name_placeholder')} value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-lg border border-gray-200 px-4 py-3 text-[#121212] placeholder:text-gray-400 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30" />
                 </div>
                 <div>
                   <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-[#121212]">{t('phone')}</label>
-                  <input id="phone" type="tel" required placeholder="06 XX XX XX XX" value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full max-w-full box-border rounded-lg border border-gray-200 px-4 py-3 text-[#121212] placeholder:text-gray-400 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30" />
+                  <input id="phone" type="tel" required placeholder="06 XX XX XX XX" value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full rounded-lg border border-gray-200 px-4 py-3 text-[#121212] placeholder:text-gray-400 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30" />
                 </div>
                 <div>
                   <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-[#121212]">{t('email')}</label>
-                  <input id="email" type="email" required placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full max-w-full box-border rounded-lg border border-gray-200 px-4 py-3 text-[#121212] placeholder:text-gray-400 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30" />
+                  <input id="email" type="email" required placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-lg border border-gray-200 px-4 py-3 text-[#121212] placeholder:text-gray-400 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30" />
                 </div>
                 <div>
                   <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-[#121212]">{t('message')}</label>
-                  <textarea id="message" required rows={5} placeholder={t('message_placeholder')} value={message} onChange={(e) => setMessage(e.target.value)} className="w-full max-w-full box-border resize-none rounded-lg border border-gray-200 px-4 py-3 text-[#121212] placeholder:text-gray-400 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30" />
+                  <textarea id="message" required rows={5} placeholder={t('message_placeholder')} value={message} onChange={(e) => setMessage(e.target.value)} className="w-full resize-none rounded-lg border border-gray-200 px-4 py-3 text-[#121212] placeholder:text-gray-400 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/30" />
                 </div>
                 <button type="submit" disabled={formSending} className="w-full rounded-lg bg-[#D4AF37] px-6 py-3.5 text-base font-semibold text-[#121212] transition-colors hover:bg-[#D4B56A] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2 sm:w-auto sm:px-10 disabled:opacity-60 disabled:cursor-not-allowed">
                   {formSending ? t('sending') : t('send_button')}
@@ -151,15 +151,15 @@ export default function ContactPage() {
 
             <div className="mt-8 space-y-4">
               {contactInfo.map((item) => (
-                <div key={item.label} className="flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-md w-full max-w-full box-border">
+                <div key={item.label} className="flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-md">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#121212] text-[#D4AF37]">{item.icon}</div>
-                  <div className="min-w-0 flex-1">
+                  <div>
                     <p className="text-sm font-medium text-gray-500">{item.label}</p>
                     {item.links.map((link) =>
                       'href' in link ? (
-                        <a key={link.text} href={link.href} className="mt-0.5 block text-base font-semibold text-[#121212] transition-colors hover:text-[#D4AF37] break-words">{link.text}</a>
+                        <a key={link.text} href={link.href} className="mt-0.5 block text-base font-semibold text-[#121212] transition-colors hover:text-[#D4AF37]">{link.text}</a>
                       ) : (
-                        <p key={link.text} className="mt-0.5 text-base font-semibold text-[#121212] break-words">{link.text}</p>
+                        <p key={link.text} className="mt-0.5 text-base font-semibold text-[#121212]">{link.text}</p>
                       )
                     )}
                   </div>
